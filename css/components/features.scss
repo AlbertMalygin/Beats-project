@@ -42,7 +42,7 @@ $iconsBgColor: #F2F5F4;
   position: relative;
 
   &::before {
-    content: url('../../img/features/separating-shape.svg');
+    content: url('../img/features/separating-shape.svg');
     position: absolute;
     top: 60px;
     left: 103%;
