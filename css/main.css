@@ -148,7 +148,7 @@ footer {
   color: #292929;
 }
 .hero::after {
-  content: url("../../img/figures/rectangle-grey.svg");
+  content: url("../img/figures/rectangle-grey.svg");
   position: absolute;
   bottom: -30px;
   right: 240px;
@@ -165,7 +165,7 @@ footer {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 24px 90px 50px;
-  background: url("../../img/beats-img.png") left 85% top 57% no-repeat;
+  background: url("../img/beats-img.png") left 85% top 57% no-repeat;
 }
 
 .hero__title-section {
@@ -259,7 +259,7 @@ footer {
 }
 
 .features::after {
-  content: url("../../img/figures/vector-red.svg");
+  content: url("../img/figures/vector-red.svg");
   position: absolute;
   bottom: -20px;
   left: 220px;
@@ -314,7 +314,7 @@ footer {
   position: relative;
 }
 .feature::before {
-  content: url("../../img/features/separating-shape.svg");
+  content: url("../img/features/separating-shape.svg");
   position: absolute;
   top: 60px;
   left: 103%;
@@ -571,7 +571,7 @@ footer {
   border-radius: 3px;
 }
 .radio__elem--checkbox::before {
-  background: url("../../img/check.png") center center no-repeat;
+  background: url("../img/check.png") center center no-repeat;
   left: 7px;
 }
 
