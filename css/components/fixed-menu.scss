@@ -1,0 +1,35 @@
+.fixed-menu {
+  position: fixed;  
+  top: 20%;
+  right: 3%;
+  z-index: $zIndexFixedMenu;
+}
+
+.fixed-menu__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 13px;
+}
+
+.fixed-menu__link {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: $black;
+
+  &--active {
+    background: $red;
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      width: 19px;
+      height: 19px;
+      border: 2px solid $red;
+      border-radius: 50%;
+      right:-7px;
+      top: -7px;
+    }
+  }
+}

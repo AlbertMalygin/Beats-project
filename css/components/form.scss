@@ -1,0 +1,125 @@
+.form-section {
+  background: #181818;
+  color: $white;
+  font-size: 16px;
+  font-weight: 400;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 50px;
+    padding: 0 80px;
+  }
+}
+
+.form__title {
+  color: $white;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  column-gap: 26px;
+}
+
+.form__col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  row-gap: 14px;
+}
+
+.form__col:last-child {
+  row-gap: 0;
+}
+
+.form__row {
+  display: flex;
+  column-gap: 13px;
+}
+
+.input__block {
+  flex: 1;
+}
+
+.input {
+  min-height: 58px;
+  border-radius: 5px;
+  width: 100%;
+
+  &--textarea {
+    min-height: 150px;
+  }
+
+  &:focus {
+    border: 3px solid $red;
+    outline: none;
+  }
+}
+
+.form__controls {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  margin-top: 35px;
+}
+
+.form__controls:nth-child(3) {
+  margin-top: 20px;
+}
+
+.radio {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.radio__item {
+  display: none;
+
+  &:checked ~ .radio__elem{
+    &::before {
+      display: block;
+    }
+  }
+}
+
+.radio__elem {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: $white;
+  position: relative;
+
+  &::before {
+    content: '';
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: $red;
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    display: none;
+  }
+
+  &--checkbox {
+    border-radius: 3px;
+
+    &::before {
+      background: url('../../img/check.png') center center no-repeat;
+      left: 7px;
+    }
+
+  }
+}
+
+.form__btns {
+  margin-top: 50px;
+  display: flex;
+  column-gap: 10px;
+}

@@ -1,0 +1,19 @@
+.review {
+  display: flex;
+  align-items: center;
+  background: #F8FAF9;
+  padding: 42px;
+  padding-right: 150px;
+  column-gap: 40px;
+}
+
+.review__content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 27px;
+}
+
+.review__text {
+  max-width: 455px;
+  line-height: 1.05em;
+}

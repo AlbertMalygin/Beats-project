@@ -1,0 +1,38 @@
+.hero {  
+  background: #F5F5F5;
+  color: $black;
+
+  &::after {
+    content: url('../../img/figures/rectangle-grey.svg');
+    position: absolute;
+    bottom: -30px;
+    right: 240px;
+  }  
+
+  .container {    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px 90px 50px;
+    background: url('../../img/beats-img.png') left 85% top 57% no-repeat;
+  }
+}
+
+.hero__title-section {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5em;
+  width: 40%;
+  margin-top: .6em;
+}
+
+.hero__title {
+  font-weight: 700;
+  font-size: 48px;
+  text-transform: uppercase;
+  line-height: 1.07em;
+}
+
+.hero__hero__title-desc {
+  width: 90%;
+}

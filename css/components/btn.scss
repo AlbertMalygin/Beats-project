@@ -1,0 +1,32 @@
+.btn {
+  text-transform: uppercase;
+  border: none;
+  padding: 18px 41px;
+  border-radius: 100px;
+  line-height: 1;
+  font-size: 16px;
+  max-width: 163px;
+  cursor: pointer;
+}
+
+.btn--bg--red {
+  background-color: $red;
+  color: $white;
+
+  &:hover {
+    background-color: #CA1B36;
+  }
+}
+
+.btn__reset {
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 400;
+  color: $white;
+  cursor: pointer;
+
+  &:hover {
+    color: $red;
+  }
+}

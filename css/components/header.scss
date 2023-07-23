@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  align-self: top;
+}
+
+.menu__list {
+  display: flex;
+  justify-content: space-between;
+  width: 640px;
+  font-family: $fontFamilyAlegreya;
+  font-weight: 400;
+  margin-top: 5px;
+  margin-left: 38px;
+}
+
+.phone-number {
+  display: flex;
+  column-gap: 5px;
+  font-weight: 400;
+  align-items: center;
+  margin-left: 46px;
+}
+
+.phone-number__icon-elem {
+  width: 14px;
+  height: 14px;
+}
