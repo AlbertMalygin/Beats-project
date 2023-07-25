@@ -1,7 +1,7 @@
 //main variables
 $containerWidth: 1100px;
 $baseFontSize: 18px;
-$fontFamilyAlegreya: "Alegreya Sans", Arial, Helvetica, sans-serif;
+$fontFamilyAlegreya: "alegreya sans", Arial, sans-serif;
 
 
 //colors
@@ -15,10 +15,12 @@ $zIndexFixedMenu: 10;
 
 //IMPORTS:
 //fonts
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;700&family=Play:wght@400;700&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;700&family=Play:wght@400;700&display=swap');
+@import "./components/fonts.scss";
 
 //layout
 @import "./layout.scss";
+@import "./normalize.scss";
 
 //components
 @import "./components/header.scss";
