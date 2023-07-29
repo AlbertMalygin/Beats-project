@@ -1,24 +1,28 @@
+.advantages {
+  @include tablets {
+    display: none;
+  }
+}
+
 .advantages__list {
   display: flex;
   align-items: center;
-  column-gap: 8px;
+  column-gap: rem(8px);
 }
 
 .advantage {
   display: flex;
   justify-content: space-between;
-  column-gap: 11px;
+  column-gap: rem(11px);
 }
 
 .advantage__icon {
-  img {
-    max-width: 41px;
-    max-height: 41px;
-  }
+  width: rem(41px);
+  height: rem(41px);
 }
 
 .advantage__desc {
-  max-width: 114px;
-  font-size: 16px;
+  max-width: rem(114px);
+  font-size: rem(16px);
   line-height: 1.1em;
 }

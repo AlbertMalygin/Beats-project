@@ -1,8 +1,10 @@
 //main variables
-$containerWidth: 1100px;
+$containerWidth: 940px;
 $baseFontSize: 18px;
-$fontFamilyAlegreya: "alegreya sans", Arial, sans-serif;
 
+//breakpoints
+$tablets: 768px;
+$phones: 480px;
 
 //colors
 $red: #E01F3D;
@@ -15,15 +17,17 @@ $zIndexFixedMenu: 10;
 
 //IMPORTS:
 //fonts
-//@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;700&family=Play:wght@400;700&display=swap');
 @import "./components/fonts.scss";
 
 //layout
+@import "./media.scss";
 @import "./layout.scss";
 @import "./normalize.scss";
 
+
 //components
 @import "./components/header.scss";
+@import "./components/hamburger.scss";
 @import "./components/hero.scss";
 @import "./components/btn.scss";
 @import "./components/advantages.scss";
@@ -33,4 +37,3 @@ $zIndexFixedMenu: 10;
 @import "./components/reviews-switcher.scss";
 @import "./components/form.scss";
 @import "./components/fixed-menu.scss";
-

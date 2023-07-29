@@ -1,12 +1,17 @@
 .btn {
   text-transform: uppercase;
   border: none;
-  padding: 18px 41px;
-  border-radius: 100px;
+  padding: rem(20px) rem(41px);
+  border-radius: rem(100px);
   line-height: 1;
-  font-size: 16px;
-  max-width: 163px;
+  font-size: rem(16px);
+  font-weight: 700;
+  max-width: rem(163px);
   cursor: pointer;
+
+  @include phones{
+    font-size: rem(18px);
+  }
 }
 
 .btn--bg--red {
@@ -21,12 +26,12 @@
 .btn__reset {
   background: none;
   border: none;
-  font-size: 16px;
+  font-size: rem(16px);
   font-weight: 400;
-  color: $white;
+  color: $red;
   cursor: pointer;
 
   &:hover {
-    color: $red;
+    color: $white;
   }
 }

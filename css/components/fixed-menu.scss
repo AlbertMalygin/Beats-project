@@ -1,6 +1,6 @@
 .fixed-menu {
   position: fixed;  
-  top: 20%;
+  top: 30%;
   right: 3%;
   z-index: $zIndexFixedMenu;
 }
@@ -8,14 +8,18 @@
 .fixed-menu__list {
   display: flex;
   flex-direction: column;
-  row-gap: 13px;
+  row-gap: rem(13px);
 }
 
 .fixed-menu__link {
-  width: 9px;
-  height: 9px;
+  width: rem(9px);
+  height: rem(9px);
   border-radius: 50%;
   background: $black;
+
+  &:hover {
+    background: $red;
+  }
 
   &--active {
     background: $red;
@@ -24,12 +28,12 @@
     &::before {
       content: '';
       position: absolute;
-      width: 19px;
-      height: 19px;
-      border: 2px solid $red;
+      width: rem(19px);
+      height: rem(19px);
+      border: rem(2px) solid $red;
       border-radius: 50%;
-      right:-7px;
-      top: -7px;
+      right:rem(-7px);
+      top: rem(-7px);
     }
   }
 }

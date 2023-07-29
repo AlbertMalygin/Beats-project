@@ -4,8 +4,8 @@ $iconsBgColor: #F2F5F4;
   &::after {
     content: url('../img/figures/vector-red.svg');
     position: absolute;
-    bottom: -20px;
-    left: 220px;
+    bottom: rem(-20px);
+    left: 10%;
   }
 
   h2 {  
@@ -18,56 +18,100 @@ $iconsBgColor: #F2F5F4;
     flex-direction: column;
     justify-content: center;
     row-gap: 4em;
-    padding: 0 95px;
   }
 }
 
 .features__title-desc {
   text-align: center;
-  max-width: 600px;
+  max-width: rem(600px);
   margin: 1em auto 0;
 }
 
 .features__list {
   display: flex;
   justify-content: space-between;
+  column-gap: rem(5px);
   text-align: center;
+  position: relative;
+
+  @include phones {
+    flex-direction: column;
+    row-gap: rem(31px);
+  }
 }
 
 .feature {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 276px;
-  position: relative;
+  max-width: rem(276px);
 
-  &::before {
-    content: url('../img/features/separating-shape.svg');
-    position: absolute;
-    top: 60px;
-    left: 103%;
+  &:first-child {
+    &::before {
+      content: url('../img/features/separating-shape.svg');
+      position: absolute;
+      top: rem(60px);
+      left: 28%;
+    }
   }
 
   &:last-child {
     &::before {
-      display: none;
+      content: url('../img/features/separating-shape.svg');
+      position: absolute;
+      top: rem(60px);
+      right: 28%;
     }
+  }
+
+  @include tablets {
+    max-width: rem(258px);
+
+    &:first-child {
+      &::before {
+        display: none;
+      }
+    }
+  
+    &:last-child {
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  @include phones {
+    flex-direction: row;
+    max-width: 99%;
+    column-gap: rem(12px);
   }
 }
 
 .feature__icon-wrapper {
-  max-width: 128px;
-  max-height: 128px;
-  padding: 30px;
+  width: rem(128px);
+  height: rem(128px);
+  padding: rem(30px);
   border-radius: 50%;
   background: $iconsBgColor;
 }
 
-.feature__title {
+.feature__content {
+  display: flex;
+  flex-direction: column;
   margin-top: 1.5em;
+
+  @include phones {
+    margin-top: 0;
+    text-align: start;
+  }
 }
 
 .feature__desc {
-  max-width: 246px;
+  max-width: rem(246px);
   line-height: 1.2;
+
+  @include phones {
+    max-width: 100%;
+    padding: 0 2% 0 0;
+  }
 }

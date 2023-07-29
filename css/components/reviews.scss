@@ -5,7 +5,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    row-gap: 15px;
-    padding: 0 80px;
+    row-gap: rem(15px);
+
+    @include tablets {
+      row-gap: 0;
+    }
   }
+
+  
 }

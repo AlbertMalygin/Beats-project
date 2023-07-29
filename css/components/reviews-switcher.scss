@@ -1,16 +1,22 @@
+.reviews-switcher {
+  @include tablets {
+    margin-top: rem(23px);
+  }
+}
+
 .reviews-switcher__list {
   display: flex;
-  column-gap: 6px;
+  column-gap: rem(6px);
 }
 
 .reviews-switcher__item {
   border-radius: 50%;
-  width: 74px;
-  height: 74px;
+  width: rem(74px);
+  height: rem(74px);
   position: relative;
 
   &--active {
-    border: 4px solid $red;
+    border: rem(4px) solid $red;
   }
 }
 
