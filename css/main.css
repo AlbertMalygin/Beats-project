@@ -1361,6 +1361,11 @@ template {
   right: 3%;
   z-index: 10;
 }
+@media screen and (max-width: 768px) {
+  .fixed-menu {
+    display: none;
+  }
+}
 
 .fixed-menu__list {
   display: -webkit-box;

@@ -3,6 +3,10 @@
   top: 30%;
   right: 3%;
   z-index: $zIndexFixedMenu;
+
+  @include tablets {
+    display: none;
+  }
 }
 
 .fixed-menu__list {
