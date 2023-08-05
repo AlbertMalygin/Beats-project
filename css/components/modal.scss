@@ -1,0 +1,35 @@
+.modal {
+  position: absolute;
+  display: flex;
+  width: 100vw;
+  height: 0vh;
+  background: #333537;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  z-index: $zIndexModalWindow;
+  transition: .3s;
+}
+
+.modal-menu {
+  display: flex;
+  flex-direction: column;
+  margin-top: 17vh;
+}
+
+.modal-menu__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2.8vh;
+}
+
+.modal-menu__link {
+  color: #FFFFFF;
+  font-size: rem(36px);
+  transition: .2s;
+
+  &:hover {
+    color: $red;
+  }
+}

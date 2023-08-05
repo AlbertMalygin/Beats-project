@@ -3,6 +3,7 @@ $iconsBgColor: #F2F5F4;
 .features {
   &::after {
     content: url('../img/figures/vector-red.svg');
+    z-index: $zIndexDecor;
     position: absolute;
     bottom: rem(-20px);
     left: 10%;
@@ -48,7 +49,7 @@ $iconsBgColor: #F2F5F4;
 
   &:first-child {
     &::before {
-      content: url('../img/features/separating-shape.svg');
+      content: url('../img/separating-shape.svg');
       position: absolute;
       top: rem(60px);
       left: 28%;
@@ -57,7 +58,7 @@ $iconsBgColor: #F2F5F4;
 
   &:last-child {
     &::before {
-      content: url('../img/features/separating-shape.svg');
+      content: url('../img/separating-shape.svg');
       position: absolute;
       top: rem(60px);
       right: 28%;

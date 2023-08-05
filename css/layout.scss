@@ -5,6 +5,7 @@
 
 html {
   font-size: $baseFontSize;
+  position: relative;
 
   @include tablets {
     font-size: $baseFontSize - 1px;
@@ -106,5 +107,4 @@ footer {
   height: 100%;
   margin: 0 auto;
   position: relative;
-  overflow: hidden;
 }
