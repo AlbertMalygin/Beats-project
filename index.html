@@ -172,25 +172,87 @@
       </div>
     </section>
 
-    <!-- <section class="section shop">
-      <div class="container">
-        
-        <div class="shop-wrapper">
-          <svg viewbox="0 0 61 61" class="shop__arrow shop__arrow--left">
-            <use xlink:href="./svg/sprite.svg#arrow"></use>
-          </svg>
-          <div class="shop__item">
-            <img src="./img/shop-img1.png" alt="beats" class="shop__img">
+    <section class="section shop">
+      <div class="shop__arrow-wrapper">
+        <svg viewbox="0 0 15 30" class="shop__arrow shop__arrow--left">
+          <use xlink:href="./svg/sprite.svg#arrow"></use>
+        </svg>
+      </div>
+      <div class="container">        
+        <ul class="shop__list">
+          
+          <li class="shop__item">
+            <div class="shop__img-wrapper">
+              <div class="shop__arrow-wrapper">
+                <svg viewbox="0 0 15 30" class="shop__arrow shop__arrow--left">
+                  <use xlink:href="./svg/sprite.svg#arrow"></use>
+                </svg>
+              </div>
+              <img src="./img/shop-img1.png" alt="beats" class="shop__img">
+              <div class="shop__arrow-wrapper">
+                <svg viewbox="0 0 15 30" class="shop__arrow shop__arrow--right">
+                  <use xlink:href="./svg/sprite.svg#arrow"></use>
+                </svg>
+              </div>
+            </div>
             <div class="shop__content">
               <div class="properties__wrapper">
-                <div class="properties">
-                  <svg viewbox="-14 -14 70 70" class="properties__icon">
+                <div class="properties__gear">
+                  <svg viewbox="-25 -25 90 90" class="properties__icon">
                     <use xlink:href="./svg/sprite.svg#gear"></use>
                   </svg>
+                  <div class="properties__dropdown-menu dropdown-menu">
+                    <ul class="dropdown-menu__list">
+                      <li class="dropdown-menu__item">
+                        <div class="dropdown-menu__prop">
+                          <svg viewbox="0 0 32 32" class="dropdown-menu__prop-icon">
+                            <use xlink:href="./svg/sprite.svg#shop_bluetooth_icon"></use>
+                          </svg>
+                          <div class="dropdown-menu__prop-name">Bluetooth</div>
+                        </div>
+                        <div class="dropdown-menu__prop-value">4.0</div>
+                      </li>
+                      <li class="dropdown-menu__item">
+                        <div class="dropdown-menu__prop">
+                          <svg viewbox="3 4 32 32" class="dropdown-menu__prop-icon">
+                            <use xlink:href="./svg/sprite.svg#shop_range_icon"></use>
+                          </svg>
+                          <div class="dropdown-menu__prop-name">Дальность </div>
+                        </div>
+                        <div class="dropdown-menu__prop-value">12 м</div>
+                      </li>
+                      <li class="dropdown-menu__item">
+                        <div class="dropdown-menu__prop">
+                          <svg viewbox="0 0 32 32" class="dropdown-menu__prop-icon">
+                            <use xlink:href="./svg/sprite.svg#shop_charger_icon"></use>
+                          </svg>
+                          <div class="dropdown-menu__prop-name">Зарядка</div>
+                        </div>
+                        <div class="dropdown-menu__prop-value">3 ч</div>
+                      </li>
+                      <li class="dropdown-menu__item">
+                        <div class="dropdown-menu__prop">
+                          <svg viewbox="0 0 32 32" class="dropdown-menu__prop-icon">
+                            <use xlink:href="./svg/sprite.svg#shop_weight_icon"></use>
+                          </svg>
+                          <div class="dropdown-menu__prop-name">Вес</div>
+                        </div>
+                        <div class="dropdown-menu__prop-value">215гр</div>
+                      </li>
+                      <li class="dropdown-menu__item">
+                        <div class="dropdown-menu__prop">
+                          <svg viewbox="0 -3 32 32" class="dropdown-menu__prop-icon">
+                            <use xlink:href="./svg/sprite.svg#shop_patent_icon"></use>
+                          </svg>
+                          <div class="dropdown-menu__prop-name">Гарантия</div>
+                        </div>
+                        <div class="dropdown-menu__prop-value">1 год</div>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
                 <div class="properties_hover-menu hover-menu"></div>
-                <h3 class="shop__header">beats solo 3. цвет 
-                  «атласное серебро»</h3>
+                <h3 class="shop__header">beats solo 3. цвет «атласное серебро»</h3>
                 <div class="shop__desc">
                   <p>Беспроводные наушники Beats Solo3 готовы к работе в любой момент. Включите их и поднесите к своему iPhone — они мгновенно подключатся к нему.</p>
                 </div>
@@ -210,14 +272,16 @@
                 </div>
               </div>
             </div>
-          </div>
-          <svg viewbox="0 0 61 61" class="shop__arrow shop__arrow--right">
-            <use xlink:href="./svg/sprite.svg#arrow"></use>
-          </svg>
-        </div>
-        
+          </li>
+          
+        </ul>
       </div>
-    </section> -->
+      <div class="shop__arrow-wrapper">
+        <svg viewbox="0 0 15 30" class="shop__arrow shop__arrow--right">
+          <use xlink:href="./svg/sprite.svg#arrow"></use>
+        </svg>
+      </div>
+    </section>
 
     <section class="section reviews">
       <div class="container">
@@ -386,25 +450,10 @@
           </ul>
         </div>
       </div>
-    </footer>
-
-    <section class="section modal">
-      <div class="container">
-        <nav class="modal-menu">
-          <ul class="modal-menu__list">
-            <li class="modal-menu__item"><a href="#" class="modal-menu__link">О нас</a></li>
-            <li class="modal-menu__item"><a href="#" class="modal-menu__link">Наушники</a></li>
-            <li class="modal-menu__item"><a href="#" class="modal-menu__link">Команда</a></li>
-            <li class="modal-menu__item"><a href="#" class="modal-menu__link">Цвета</a></li>
-            <li class="modal-menu__item"><a href="#" class="modal-menu__link">Отзывы</a></li>
-            <li class="modal-menu__item"><a href="#" class="modal-menu__link">Как мы работаем</a></li>
-            <li class="modal-menu__item"><a href="#" class="modal-menu__link">Контакты</a></li>
-          </ul>
-        </nav>
-      </div>
-    </section>
+    </footer>    
 
   </div>
+
   <nav class="fixed-menu">
     <ul class="fixed-menu__list">
       <li class="fixed-menu__item">
@@ -436,6 +485,22 @@
       </li>
     </ul>
   </nav>
+
+  <section class="section modal">
+    <div class="container">
+      <nav class="modal-menu">
+        <ul class="modal-menu__list">
+          <li class="modal-menu__item"><a href="#" class="modal-menu__link">О нас</a></li>
+          <li class="modal-menu__item"><a href="#" class="modal-menu__link">Наушники</a></li>
+          <li class="modal-menu__item"><a href="#" class="modal-menu__link">Команда</a></li>
+          <li class="modal-menu__item"><a href="#" class="modal-menu__link">Цвета</a></li>
+          <li class="modal-menu__item"><a href="#" class="modal-menu__link">Отзывы</a></li>
+          <li class="modal-menu__item"><a href="#" class="modal-menu__link">Как мы работаем</a></li>
+          <li class="modal-menu__item"><a href="#" class="modal-menu__link">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
   
 
   <script src="./scripts/main.js"></script>
