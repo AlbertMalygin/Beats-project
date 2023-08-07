@@ -1,0 +1,44 @@
+.slider-controls__arrow {
+  position: absolute;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  
+
+  &--left {
+    left: rem(-10px);
+  }
+
+  &--right {
+    right: rem(-10px);
+  }
+
+  @include tablets {
+    align-items: normal;
+    top: 39vw;
+
+    &--left {
+      left: 15vw;      
+    }
+  
+    &--right {
+      right: 15vw;
+    }
+  }
+}
+
+.arrow {
+  display: flex;
+  stroke: black;
+  height: rem(41px);
+  fill: none;
+  cursor: pointer;
+
+  &--right {
+    transform: rotate(180deg);
+  }
+
+  &:hover {
+    stroke: $red;
+  }
+}

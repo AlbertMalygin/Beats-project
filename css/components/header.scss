@@ -16,29 +16,6 @@
   min-width: 76%;
 }
 
-.menu {
-  display: flex;
-  min-width: 89%;
-
-  @include tablets {
-    display: none;
-  }
-}
-
-.menu__list {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  font-weight: 400;
-  margin-top: rem(5px);
-  flex-wrap: wrap;
-  column-gap: rem(15px);
-}
-
-.menu__link {
-  white-space: nowrap;
-}
-
 .contacts {
   min-width: rem(157px);
   margin: auto;

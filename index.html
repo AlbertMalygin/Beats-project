@@ -18,15 +18,15 @@
             <a href="#" class="logo__link">
               <img src="./img/logo.png" alt="beats logo" class="logo">
             </a>
-            <nav class="menu">
-              <ul class="menu__list">
-                <li class="menu__item"><a href="#" class="menu__link">О нас</a></li>
-                <li class="menu__item"><a href="#" class="menu__link">Наушники</a></li>
-                <li class="menu__item"><a href="#" class="menu__link">Команда</a></li>
-                <li class="menu__item"><a href="#" class="menu__link">Цвета</a></li>
-                <li class="menu__item"><a href="#" class="menu__link">Отзывы</a></li>
-                <li class="menu__item"><a href="#" class="menu__link">Как мы работаем</a></li>
-                <li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
+            <nav class="menu menu--header">
+              <ul class="menu__list menu__list--header">
+                <li class="menu__item menu__item--header"><a href="#" class="menu__link menu__link--header">О нас</a></li>
+                <li class="menu__item menu__item--header"><a href="#" class="menu__link menu__link--header">Наушники</a></li>
+                <li class="menu__item menu__item--header"><a href="#" class="menu__link menu__link--header">Команда</a></li>
+                <li class="menu__item menu__item--header"><a href="#" class="menu__link menu__link--header">Цвета</a></li>
+                <li class="menu__item menu__item--header"><a href="#" class="menu__link menu__link--header">Отзывы</a></li>
+                <li class="menu__item menu__item--header"><a href="#" class="menu__link menu__link--header">Как мы работаем</a></li>
+                <li class="menu__item menu__item--header"><a href="#" class="menu__link menu__link--header">Контакты</a></li>
               </ul>
             </nav>
           </div>
@@ -173,27 +173,27 @@
     </section>
 
     <section class="section shop">
-      <div class="shop__arrow-wrapper">
-        <svg viewbox="0 0 15 30" class="shop__arrow shop__arrow--left">
-          <use xlink:href="./svg/sprite.svg#arrow"></use>
-        </svg>
-      </div>
-      <div class="container">        
+      <div class="container">
+
+        <!-- Slider controls -->
+        <div class="slider-controls__arrow slider-controls__arrow--left">
+          <svg viewbox="0 0 15 30" class="arrow arrow--left">
+            <use xlink:href="./svg/sprite.svg#arrow"></use>
+          </svg>
+        </div>
+        <div class="slider-controls__arrow slider-controls__arrow--right">
+          <svg viewbox="0 0 15 30" class="arrow arrow--right">
+            <use xlink:href="./svg/sprite.svg#arrow"></use>
+          </svg>
+        </div>
+
+        <!-- Slider -->
         <ul class="shop__list">
           
+          <!-- Slider item -->
           <li class="shop__item">
             <div class="shop__img-wrapper">
-              <div class="shop__arrow-wrapper">
-                <svg viewbox="0 0 15 30" class="shop__arrow shop__arrow--left">
-                  <use xlink:href="./svg/sprite.svg#arrow"></use>
-                </svg>
-              </div>
               <img src="./img/shop-img1.png" alt="beats" class="shop__img">
-              <div class="shop__arrow-wrapper">
-                <svg viewbox="0 0 15 30" class="shop__arrow shop__arrow--right">
-                  <use xlink:href="./svg/sprite.svg#arrow"></use>
-                </svg>
-              </div>
             </div>
             <div class="shop__content">
               <div class="properties__wrapper">
@@ -275,11 +275,6 @@
           </li>
           
         </ul>
-      </div>
-      <div class="shop__arrow-wrapper">
-        <svg viewbox="0 0 15 30" class="shop__arrow shop__arrow--right">
-          <use xlink:href="./svg/sprite.svg#arrow"></use>
-        </svg>
       </div>
     </section>
 
@@ -450,8 +445,24 @@
           </ul>
         </div>
       </div>
-    </footer>    
+    </footer>
 
+    <!-- Modal window -->
+    <section class="section modal">
+      <div class="container">
+        <nav class="menu menu--modal">
+          <ul class="menu__list menu__list--modal">
+            <li class="menu__item menu__item--modal"><a href="#" class="menu__link menu__link--modal">О нас</a></li>
+            <li class="menu__item menu__item--modal"><a href="#" class="menu__link menu__link--modal">Наушники</a></li>
+            <li class="menu__item menu__item--modal"><a href="#" class="menu__link menu__link--modal">Команда</a></li>
+            <li class="menu__item menu__item--modal"><a href="#" class="menu__link menu__link--modal">Цвета</a></li>
+            <li class="menu__item menu__item--modal"><a href="#" class="menu__link menu__link--modal">Отзывы</a></li>
+            <li class="menu__item menu__item--modal"><a href="#" class="menu__link menu__link--modal">Как мы работаем</a></li>
+            <li class="menu__item menu__item--modal"><a href="#" class="menu__link menu__link--modal">Контакты</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
   </div>
 
   <nav class="fixed-menu">
@@ -484,24 +495,7 @@
         <a href="" class="fixed-menu__link"></a>
       </li>
     </ul>
-  </nav>
-
-  <section class="section modal">
-    <div class="container">
-      <nav class="modal-menu">
-        <ul class="modal-menu__list">
-          <li class="modal-menu__item"><a href="#" class="modal-menu__link">О нас</a></li>
-          <li class="modal-menu__item"><a href="#" class="modal-menu__link">Наушники</a></li>
-          <li class="modal-menu__item"><a href="#" class="modal-menu__link">Команда</a></li>
-          <li class="modal-menu__item"><a href="#" class="modal-menu__link">Цвета</a></li>
-          <li class="modal-menu__item"><a href="#" class="modal-menu__link">Отзывы</a></li>
-          <li class="modal-menu__item"><a href="#" class="modal-menu__link">Как мы работаем</a></li>
-          <li class="modal-menu__item"><a href="#" class="modal-menu__link">Контакты</a></li>
-        </ul>
-      </nav>
-    </div>
-  </section>
-  
+  </nav>  
 
   <script src="./scripts/main.js"></script>
   
