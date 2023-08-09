@@ -2,6 +2,8 @@
   position: absolute;
   display: flex;
   height: 100vh;
+  width: 5%;
+  top: 0;
   align-items: center;
   
 
@@ -10,19 +12,19 @@
   }
 
   &--right {
-    right: rem(-10px);
+    right: rem(-40px);
   }
 
   @include tablets {
-    align-items: normal;
-    top: 39vw;
+    position: relative;
+    height: 100%;
 
     &--left {
-      left: 15vw;      
+      left: 0;
     }
   
     &--right {
-      right: 15vw;
+      right: 0;
     }
   }
 }

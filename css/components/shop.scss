@@ -22,8 +22,8 @@
 
   @include tablets {
     flex-direction: column;
-    justify-content: flex-start;
-    padding-top: 20vw;
+    justify-content: center;
+    padding-top: 20vh;
     padding-left: 0;
   }
 }
@@ -41,6 +41,10 @@
 
 .shop__img {
   width: 100%;
+  
+  &::selection {
+    background: none;
+  }
 
   @include tablets {
     width: 50%;
@@ -50,7 +54,7 @@
 .shop__content {
   display: flex;
   flex-direction: column;
-  width: 44%;
+  width: 46%;
 
   @include tablets {
     width: 100%;
@@ -96,18 +100,22 @@
   }
 }
 
+
 .shop__desc {
   display: flex;
   margin-top: 2.5vh;
   line-height: 1.1rem;
   max-width: 85%;
+  min-height: 13vh;
+  font-size: rem(16px);
 
   @include tablets {
     max-width: 100%;
+    min-height: 8vh;
   }
 }
 
-.shop__short-prop {
+.shop__item-prop {
   display: flex;
   width: 100%;
   column-gap: 21%;
@@ -121,18 +129,18 @@
   }
 }
 
-.short-prop__wrapper {
+.item-prop__wrapper {
   display: flex;
   flex-direction: column;
   line-height: 1.1rem;
 }
 
-.short-prop__prop-name {
+.item-prop__prop-name {
   font-size: rem(16px);
   color: $body;
 }
 
-.short-prop__prop-value {
+.item-prop__prop-value {
   font-weight: 700;
 }
 

@@ -175,25 +175,23 @@
     <section class="section shop">
       <div class="container">
 
-        <!-- Slider controls -->
-        <div class="slider-controls__arrow slider-controls__arrow--left">
-          <svg viewbox="0 0 15 30" class="arrow arrow--left">
-            <use xlink:href="./svg/sprite.svg#arrow"></use>
-          </svg>
-        </div>
-        <div class="slider-controls__arrow slider-controls__arrow--right">
-          <svg viewbox="0 0 15 30" class="arrow arrow--right">
-            <use xlink:href="./svg/sprite.svg#arrow"></use>
-          </svg>
-        </div>
-
         <!-- Slider -->
         <ul class="shop__list">
           
           <!-- Slider item -->
           <li class="shop__item">
             <div class="shop__img-wrapper">
-              <img src="./img/shop-img1.png" alt="beats" class="shop__img">
+              <div class="slider-controls__arrow slider-controls__arrow--left">
+                <svg viewbox="0 0 15 30" class="arrow arrow--left">
+                  <use xlink:href="./svg/sprite.svg#arrow"></use>
+                </svg>
+              </div>
+              <img src="" alt="beats" class="shop__img">
+              <div class="slider-controls__arrow slider-controls__arrow--right">
+                <svg viewbox="0 0 15 30" class="arrow arrow--right">
+                  <use xlink:href="./svg/sprite.svg#arrow"></use>
+                </svg>
+              </div>
             </div>
             <div class="shop__content">
               <div class="properties__wrapper">
@@ -237,7 +235,7 @@
                           </svg>
                           <div class="dropdown-menu__prop-name">Вес</div>
                         </div>
-                        <div class="dropdown-menu__prop-value">215гр</div>
+                        <div class="dropdown-menu__prop-value">215 гр</div>
                       </li>
                       <li class="dropdown-menu__item">
                         <div class="dropdown-menu__prop">
@@ -251,29 +249,100 @@
                     </ul>
                   </div>
                 </div>
-                <div class="properties_hover-menu hover-menu"></div>
                 <h3 class="shop__header">beats solo 3. цвет «атласное серебро»</h3>
                 <div class="shop__desc">
                   <p>Беспроводные наушники Beats Solo3 готовы к работе в любой момент. Включите их и поднесите к своему iPhone — они мгновенно подключатся к нему.</p>
                 </div>
-                <div class="shop__short-prop short-prop">
-                  <div class="short-prop__wrapper">
-                    <div class="short-prop__prop-name">Зарядка</div>
-                    <div class="short-prop__prop-value">2 часа</div>
+                <div class="shop__item-prop item-prop">
+                  <div class="item-prop__wrapper">
+                    <div class="item-prop__prop-name">Зарядка</div>
+                    <div class="item-prop__prop-value">3 часа</div>
                   </div>
-                  <div class="short-prop__wrapper">
-                    <div class="short-prop__prop-name">Вес</div>
-                    <div class="short-prop__prop-value">215 грамм</div>
+                  <div class="item-prop__wrapper">
+                    <div class="item-prop__prop-name">Вес</div>
+                    <div class="item-prop__prop-value">215 грамм</div>
                   </div>
                 </div>
                 <div class="shop-order">
                   <div class="shop-order__price">14 990 ₽</div>
-                  <button class="btn btn--bg--red">Заказать</button>
+                  <a href="#заказать.solo.3" class="btn btn--bg--red order-btn">Заказать</a>
                 </div>
               </div>
             </div>
           </li>
           
+        </ul>
+      </div>
+    </section>
+
+    <section class="section team">
+      <div class="container">
+        <h2 class="team__header">команда</h2>
+        <ul class="team__list">
+          <li class="team__employee">
+            <img src="" alt="Boris photo" class="employee__photo">
+            <div class="employee__content-wrapper">
+              <div class="employee__control">
+                <h5 class="employee__name">Борис Федорович</h5>
+                <div class="employee__status"></div>
+              </div>
+              <div class="employee__content employee__content--active">
+                <img src="" alt="Boris photo" class="employee__tab-photo">
+                <div class="employee__position">Главный технолог</div>
+                <div class="employee__description">Отвечает за вкусовые качества 
+                  и калорийность.</div>
+              </div>
+            </div>
+            
+          </li>
+          <li class="team__employee">
+            <img src="" alt="Alla photo" class="employee__photo">
+            <div class="employee__content-wrapper">
+              <div class="employee__control">
+                <h5 class="employee__name">Алла Иванова</h5>
+                <div class="employee__status"></div>
+              </div>
+              <div class="employee__content ">
+                <img src="" alt="Alla photo" class="employee__tab-photo">
+                <div class="employee__position">Специалист по упаковке</div>
+                <div class="employee__description">Автор запоминающегося стиля 
+                  наших батончиков.</div>
+              </div>
+            </div>
+            
+          </li>
+          <li class="team__employee">
+            <img src="" alt="Kirill photo" class="employee__photo">
+            <div class="employee__content-wrapper">
+              <div class="employee__control">
+                <h5 class="employee__name">Кирилл Матросов</h5>
+                <div class="employee__status"></div>
+              </div>
+              <div class="employee__content">
+                <img src="" alt="Kirill photo" class="employee__tab-photo">
+                <div class="employee__position">Оператор</div>
+                <div class="employee__description">Разработал дизан
+                  наушников beats solo 3.</div>
+              </div>
+            </div>
+            
+          </li>
+          <li class="team__employee">
+            <img src="" alt="Mila photo" class="employee__photo">
+            <div class="employee__content-wrapper">
+              <div class="employee__control">
+                <h5 class="employee__name">Мила Рыжкова</h5>
+                <div class="employee__status"></div>
+              </div>
+              <div class="employee__content">
+                <img src="" alt="Mila photo" class="employee__tab-photo">
+                <div class="employee__position">PR, маркетинг</div>
+                <div class="employee__description">По всем вопросам сотрудничества 
+                  и рекламы писать только Миле.</div>
+              </div>
+            </div>
+            
+          </li>
         </ul>
       </div>
     </section>
@@ -497,7 +566,7 @@
     </ul>
   </nav>  
 
-  <script src="./scripts/main.js"></script>
+  <script type="module" src="./scripts/main.js"></script>
   
 </body>
 </html>
