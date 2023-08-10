@@ -66,13 +66,12 @@ let addSliderContent = () => {
 
 
 
-shopSection.addEventListener('mousedown', e => {
-  event.preventDefault();
+shopSection.addEventListener('touchmove', e => {
   mouseDownPosX = e.x;
   mouseDownPosY = e.y;
 });
 
-shopSection.addEventListener('mouseup', e => {
+shopSection.addEventListener('touchend', e => {
   mouseUpPosX = e.x;
   mouseUpPosY = e.y;
   let posYmoved = mouseUpPosY - mouseDownPosY;
@@ -188,10 +187,8 @@ window.addEventListener('resize', () => {
   let width = window.innerWidth;
 
   if (width <= tabletSize && !employeeTabPhoto[0].src.endsWith('.png')) {
-    console.log('tab');
     addPhotoUrl(employeeTabPhoto, imgUrls, employeePhoto);
   } else if (width > tabletSize && !employeePhoto[0].src.endsWith('.png')){
     addPhotoUrl(employeePhoto, imgUrls, employeeTabPhoto);
-    console.log('desktop');
   }
 });
