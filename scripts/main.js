@@ -88,8 +88,10 @@ const imgUrls = [
                 ];                
 const employeePhoto = document.querySelectorAll('.employee__photo');
 const employeeTabPhoto = document.querySelectorAll('.employee__tab-photo');
+const teamContentWrapper = document.querySelectorAll('.employee__content-wrapper');
 const teamContent = document.querySelectorAll('.employee__content');
 const contentControl = document.querySelectorAll('.employee__control');
+const contentControlStatus = document.querySelectorAll('.employee__status')
 
 let addPhotoUrl = (photosArr, photosUrl, photosUrlForRemove) => {
   for (let i = 0; i < photosArr.length; i++) {
@@ -97,6 +99,7 @@ let addPhotoUrl = (photosArr, photosUrl, photosUrlForRemove) => {
     photosUrlForRemove[i].src = '';
   }
 }
+
 
 if (screenWidth <= tabletSize) {
   addPhotoUrl(employeeTabPhoto, imgUrls, employeePhoto);
@@ -108,11 +111,17 @@ for (let i = 0; i < contentControl.length; i++) {
   contentControl[i].addEventListener('click', () => {
     if (teamContent[i].classList.contains('employee__content--active')) {
       teamContent[i].classList.remove('employee__content--active');
+      teamContentWrapper[i].classList.remove('employee__content-wrapper--active');
+      contentControlStatus[i].classList.remove('employee__status--rotated');
     } else {
       for (let n = 0; n < contentControl.length; n++) {
         teamContent[n].classList.remove('employee__content--active');
+        teamContentWrapper[n].classList.remove('employee__content-wrapper--active');
+        contentControlStatus[n].classList.remove('employee__status--rotated');
       }
       teamContent[i].classList.add('employee__content--active');
+      teamContentWrapper[i].classList.add('employee__content-wrapper--active');
+      contentControlStatus[i].classList.add('employee__status--rotated');
     }
     
   });
