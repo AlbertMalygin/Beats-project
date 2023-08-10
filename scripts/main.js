@@ -41,10 +41,10 @@ const item = {
   orderBtn: document.querySelector('.order-btn')
 };
 let itemNum = 0;
-let mouseDownPosX;
-let mouseUpPosX;
-let mouseDownPosY;
-let mouseUpPosY;
+let touchStartPosX;
+let touchEndPosX;
+let touchStartPosY;
+let touchEndPosY;
 item.shopItemImg.src = SHOP_BASE[0].imgUrlDesktop;
 
 
@@ -64,19 +64,20 @@ let addSliderContent = () => {
   item.orderBtn.href = SHOP_BASE[itemNum].orderBtnUrl;
 };
 
-item.shopItemImg.addEventListener('mousedown', (event) => {event.preventDefault()});
+item.shopItemImg.addEventListener('touchstart', (event) => {event.preventDefault()});
 
-shopSection.addEventListener('mousedown', e => {
+shopSection.addEventListener('touchstart', e => {
   console.log(e);
-  mouseDownPosX = e.x;
-  mouseDownPosY = e.y;
+  
+  touchStartPosX = e.x;
+  touchStartPosY = e.y;
 });
 
-shopSection.addEventListener('mouseup', e => {
-  mouseUpPosX = e.x;
-  mouseUpPosY = e.y;
-  let posYmoved = mouseUpPosY - mouseDownPosY;
-  let posXmoved = mouseUpPosX - mouseDownPosX;
+shopSection.addEventListener('touchend', e => {
+  touchEndPosX = e.x;
+  touchEndPosY = e.y;
+  let posYmoved = touchEndPosY - touchStartPosY;
+  let posXmoved = touchEndPosX - touchStartPosX;
   if (posYmoved < 0) {
     posYmoved = posYmoved*-1;
   }
@@ -85,7 +86,7 @@ shopSection.addEventListener('mouseup', e => {
   }
 
   if (posYmoved < 30 && posXmoved > 5) {
-    if (mouseUpPosX > mouseDownPosX) {
+    if (touchEndPosX > touchStartPosX) {
       itemNum++;
       if (itemNum >= SHOP_BASE.length) {
         itemNum = 0;
