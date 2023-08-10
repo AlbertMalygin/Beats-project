@@ -41,6 +41,7 @@
 
 .shop__img {
   width: 100%;
+  transition: .3s;
   
   &::selection {
     background: none;
@@ -54,7 +55,7 @@
 .shop__content {
   display: flex;
   flex-direction: column;
-  width: 48%;
+  width: 49%;
 
   @include tablets {
     width: 100%;

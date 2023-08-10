@@ -1,4 +1,5 @@
 import {SHOP_BASE} from "./shop_items.js";
+import {USERS_BASE} from "./reviews_authors.js";
 
 const tabletSize = 768;
 const MobileSize = 480;
@@ -28,7 +29,6 @@ window.addEventListener('scroll', () => {
 
 
 //Shop section functional
-const shopSection = document.querySelector('.shop');
 const arrowLeft = document.querySelector('.arrow--left');
 const arrowRight = document.querySelector('.arrow--right');
 const item = {
@@ -41,15 +41,11 @@ const item = {
   orderBtn: document.querySelector('.order-btn')
 };
 let itemNum = 0;
-let touchStartPosX;
-let touchEndPosX;
-let touchStartPosY;
-let touchEndPosY;
 item.shopItemImg.src = SHOP_BASE[0].imgUrlDesktop;
 
 
 
-let addSliderContent = () => {
+let addShopSliderContent = () => {
   item.shopItemImg.src = SHOP_BASE[itemNum].imgUrlDesktop;
   item.dropMenu.childNodes[1].childNodes[3].innerHTML = SHOP_BASE[itemNum].bluetoothVersion;
   item.dropMenu.childNodes[3].childNodes[3].innerHTML = SHOP_BASE[itemNum].range;
@@ -64,54 +60,13 @@ let addSliderContent = () => {
   item.orderBtn.href = SHOP_BASE[itemNum].orderBtnUrl;
 };
 
-item.shopItemImg.addEventListener('touchstart', (event) => {event.preventDefault()});
-
-shopSection.addEventListener('touchstart', e => {
-  console.log(e);
-  
-  touchStartPosX = e.x;
-  touchStartPosY = e.y;
-});
-
-shopSection.addEventListener('touchend', e => {
-  touchEndPosX = e.x;
-  touchEndPosY = e.y;
-  let posYmoved = touchEndPosY - touchStartPosY;
-  let posXmoved = touchEndPosX - touchStartPosX;
-  if (posYmoved < 0) {
-    posYmoved = posYmoved*-1;
-  }
-  if (posXmoved < 0) {
-    posXmoved = posXmoved*-1;
-  }
-
-  if (posYmoved < 30 && posXmoved > 5) {
-    if (touchEndPosX > touchStartPosX) {
-      itemNum++;
-      if (itemNum >= SHOP_BASE.length) {
-        itemNum = 0;
-      }
-      
-      addSliderContent();
-    } else {
-      itemNum--;
-      if (itemNum < 0) {
-        itemNum = SHOP_BASE.length - 1;
-      }
-    }
-
-    addSliderContent();
-  }
-
-});
-
 arrowLeft.addEventListener('click', () => {
   itemNum--;
   if (itemNum < 0) {
     itemNum = SHOP_BASE.length - 1;
   }
 
-  addSliderContent();
+  addShopSliderContent();
 });
 
 arrowRight.addEventListener('click', () => {
@@ -120,7 +75,7 @@ arrowRight.addEventListener('click', () => {
     itemNum = 0;
   }
   
-  addSliderContent();
+  addShopSliderContent();
 });
 
 
@@ -131,7 +86,7 @@ const imgUrls = [
                   './img/employee/alla.png',
                   './img/employee/kirill.png',
                   './img/employee/mila.png'
-                ];                
+                ];
 const employeePhoto = document.querySelectorAll('.employee__photo');
 const employeeTabPhoto = document.querySelectorAll('.employee__tab-photo');
 const teamContentWrapper = document.querySelectorAll('.employee__content-wrapper');
@@ -175,10 +130,37 @@ for (let i = 0; i < contentControl.length; i++) {
 
 
 //Review section functional
+const user = {
+  userImg: document.querySelector('.review__user-photo'),
+  reviewHeader: document.querySelector('.review__title'),
+  reviewText: document.querySelector('.review__text'),
+  reviewAuthor: document.querySelector('.review__author-name'),
+  sliderControlImgs: document.querySelectorAll('.reviews-switcher__author')
+};
+const sliderElems = document.querySelectorAll('.reviews-switcher__item');
 
+user.userImg.src = USERS_BASE[0].userImg;
+user.userImg.alt = USERS_BASE[0].userImg.split('/')[3].split('.')[0];
+user.reviewHeader.textContent = USERS_BASE[0].reviewHeader;
+user.reviewText.textContent = USERS_BASE[0].reviewText;
+user.reviewAuthor.textContent = USERS_BASE[0].reviewAuthor;
 
+for(let i = 0; i < USERS_BASE.length; i++) {
+  user.sliderControlImgs[i].src = USERS_BASE[i].userImg;
+  user.sliderControlImgs[i].alt = USERS_BASE[i].userImg.split('/')[3].split('.')[0];
 
-
+  user.sliderControlImgs[i].addEventListener('click', function() {
+    for(let n = 0; n < sliderElems.length; n++) {
+      sliderElems[n].classList.remove('reviews-switcher__item--active');
+    }
+    user.userImg.src = USERS_BASE[i].userImg;
+    user.userImg.alt = USERS_BASE[i].userImg.split('/')[3].split('.')[0];
+    user.reviewHeader.textContent = USERS_BASE[i].reviewHeader;
+    user.reviewText.textContent = USERS_BASE[i].reviewText;
+    user.reviewAuthor.textContent = USERS_BASE[i].reviewAuthor;
+    sliderElems[i].classList.add('reviews-switcher__item--active');
+  });
+}
 
 
 

@@ -14,6 +14,7 @@
   width: rem(74px);
   height: rem(74px);
   position: relative;
+  overflow: hidden;
 
   &--active {
     border: rem(4px) solid $red;
@@ -30,6 +31,7 @@
 }
 
 .reviews-switcher__author {
+  cursor: pointer;
   display: block;
   width: 100%;
   height: 100%;
