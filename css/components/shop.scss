@@ -18,7 +18,7 @@
   height: 100%;
   align-items: center;
   justify-content: space-between;
-  padding-left: 5%;
+  padding: 0 5%;
 
   @include tablets {
     flex-direction: column;
@@ -29,7 +29,7 @@
 }
 
 .shop__img-wrapper {
-  width: 48%;
+  width: 46%;
   display: flex;
 
   @include tablets {
@@ -54,7 +54,7 @@
 .shop__content {
   display: flex;
   flex-direction: column;
-  width: 46%;
+  width: 48%;
 
   @include tablets {
     width: 100%;

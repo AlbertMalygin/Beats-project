@@ -998,7 +998,7 @@ template {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding-left: 5%;
+  padding: 0 5%;
 }
 @media screen and (max-width: 768px) {
   .shop__item {
@@ -1015,7 +1015,7 @@ template {
 }
 
 .shop__img-wrapper {
-  width: 48%;
+  width: 46%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1055,7 +1055,7 @@ template {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 46%;
+  width: 48%;
 }
 @media screen and (max-width: 768px) {
   .shop__content {

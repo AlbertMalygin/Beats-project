@@ -27,10 +27,10 @@ window.addEventListener('scroll', () => {
 });
 
 
-
-//Shop variables
-const arrowLeft = document.querySelector('.slider-controls__arrow--left');
-const arrowRight = document.querySelector('.slider-controls__arrow--right');
+//Shop section functional
+const shopSection = document.querySelector('.shop');
+const arrowLeft = document.querySelector('.arrow--left');
+const arrowRight = document.querySelector('.arrow--right');
 const item = {
   shopItemImg: document.querySelector('.shop__img'),
   dropMenu: document.querySelector('.dropdown-menu__list'),
@@ -41,9 +41,14 @@ const item = {
   orderBtn: document.querySelector('.order-btn')
 };
 let itemNum = 0;
+let mouseDownPosX;
+let mouseUpPosX;
+let mouseDownPosY;
+let mouseUpPosY;
 item.shopItemImg.src = SHOP_BASE[0].imgUrlDesktop;
 
-//Shop slider functional
+
+
 let addSliderContent = () => {
   item.shopItemImg.src = SHOP_BASE[itemNum].imgUrlDesktop;
   item.dropMenu.childNodes[1].childNodes[3].innerHTML = SHOP_BASE[itemNum].bluetoothVersion;
@@ -53,11 +58,51 @@ let addSliderContent = () => {
   item.dropMenu.childNodes[9].childNodes[3].innerHTML = SHOP_BASE[itemNum].guarantee;
   item.shopHeader.innerHTML = SHOP_BASE[itemNum].name;
   item.shopDescription.innerHTML = SHOP_BASE[itemNum].itemDescription;
-  item.itemProperties.childNodes[1].childNodes[3].innerHTML = SHOP_BASE[itemNum].charger;
+  item.itemProperties.childNodes[1].childNodes[3].innerHTML = SHOP_BASE[itemNum].charger + 'аса';
   item.itemProperties.childNodes[3].childNodes[3].innerHTML = SHOP_BASE[itemNum].weight + 'амм';
   item.itemPrice.innerHTML= SHOP_BASE[itemNum].price;
   item.orderBtn.href = SHOP_BASE[itemNum].orderBtnUrl;
 };
+
+
+
+shopSection.addEventListener('mousedown', e => {
+  event.preventDefault();
+  mouseDownPosX = e.x;
+  mouseDownPosY = e.y;
+});
+
+shopSection.addEventListener('mouseup', e => {
+  mouseUpPosX = e.x;
+  mouseUpPosY = e.y;
+  let posYmoved = mouseUpPosY - mouseDownPosY;
+  let posXmoved = mouseUpPosX - mouseDownPosX;
+  if (posYmoved < 0) {
+    posYmoved = posYmoved*-1;
+  }
+  if (posXmoved < 0) {
+    posXmoved = posXmoved*-1;
+  }
+
+  if (posYmoved < 30 && posXmoved > 5) {
+    if (mouseUpPosX > mouseDownPosX) {
+      itemNum++;
+      if (itemNum >= SHOP_BASE.length) {
+        itemNum = 0;
+      }
+      
+      addSliderContent();
+    } else {
+      itemNum--;
+      if (itemNum < 0) {
+        itemNum = SHOP_BASE.length - 1;
+      }
+    }
+
+    addSliderContent();
+  }
+
+});
 
 arrowLeft.addEventListener('click', () => {
   itemNum--;
@@ -126,6 +171,10 @@ for (let i = 0; i < contentControl.length; i++) {
     
   });
 }
+
+
+//Review section functional
+
 
 
 
