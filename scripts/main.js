@@ -64,14 +64,15 @@ let addSliderContent = () => {
   item.orderBtn.href = SHOP_BASE[itemNum].orderBtnUrl;
 };
 
+item.shopItemImg.addEventListener('mousedown', (event) => {event.preventDefault()});
 
-
-shopSection.addEventListener('touchmove', e => {
+shopSection.addEventListener('mousedown', e => {
+  console.log(e);
   mouseDownPosX = e.x;
   mouseDownPosY = e.y;
 });
 
-shopSection.addEventListener('touchend', e => {
+shopSection.addEventListener('mouseup', e => {
   mouseUpPosX = e.x;
   mouseUpPosY = e.y;
   let posYmoved = mouseUpPosY - mouseDownPosY;
