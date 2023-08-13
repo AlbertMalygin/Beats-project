@@ -249,7 +249,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       xhr.send(JSON.stringify(data));
       
       xhr.addEventListener('progress', e => {
-        
+
         if (e.target.status == 200) {
 
         const response = JSON.parse(xhr.response);
@@ -262,6 +262,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
         
         }
 
+        formModal.classList.add('modal--form--active');
+        body.style.overflow = 'hidden';
+
+      });
+
+      xhr.addEventListener('error', e => {
+        
+        responseText.textContent = "Ошибка соединения!";
+        responseText.classList.add('modal--form__text--error');
         formModal.classList.add('modal--form--active');
         body.style.overflow = 'hidden';
 
