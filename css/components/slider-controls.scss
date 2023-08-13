@@ -2,17 +2,17 @@
   position: absolute;
   display: flex;
   height: 100vh;
-  width: 5%;
+  width: rem(20px);
   top: 0;
   align-items: center;
   
 
   &--left {
-    left: rem(-10px);
+    left: rem(0px);
   }
 
   &--right {
-    right: rem(-40px);
+    right: rem(0px);
   }
 
   @include tablets {

@@ -52,6 +52,11 @@
 
 .input__block {
   flex: 1;
+
+  .form__error {
+    color: $red;
+    font-size: rem(14px);
+  }
 }
 
 .input__title {
@@ -159,4 +164,8 @@
   @include tablets {
     justify-content: center;
   }
+}
+
+.form-input--warning {
+  border: 2px solid red;
 }

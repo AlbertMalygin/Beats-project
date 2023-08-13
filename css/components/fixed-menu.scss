@@ -25,6 +25,10 @@
     background: $red;
   }
 
+  &--white {
+    background: white;
+  }
+
   &--active {
     background: $red;
     position: relative;

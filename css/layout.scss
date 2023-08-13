@@ -1,11 +1,13 @@
 * {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
+  // overflow: hidden;
 }
 
 html {
   font-size: $baseFontSize;
   position: relative;
+  scroll-behavior: smooth;
 
   @include tablets {
     font-size: $baseFontSize - 1px;
@@ -107,4 +109,19 @@ footer {
   height: 100%;
   margin: 0 auto;
   position: relative;
+}
+
+// future sections
+
+.colors, .video {
+  background: #F8FAF9;
+}
+
+.InDev {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }

@@ -9,29 +9,29 @@
   max-width: rem(163px);
   cursor: pointer;
 
+  &--bg--red {
+    background-color: $red;
+    color: $white;
+  
+    &:hover {
+      background-color: #CA1B36;
+    }
+  }
+
+  &__reset {
+    background: none;
+    border: none;
+    font-size: rem(16px);
+    font-weight: 400;
+    color: $red;
+    cursor: pointer;
+  
+    &:hover {
+      color: $white;
+    }
+  }
+
   @include phones{
     font-size: rem(18px);
-  }
-}
-
-.btn--bg--red {
-  background-color: $red;
-  color: $white;
-
-  &:hover {
-    background-color: #CA1B36;
-  }
-}
-
-.btn__reset {
-  background: none;
-  border: none;
-  font-size: rem(16px);
-  font-weight: 400;
-  color: $red;
-  cursor: pointer;
-
-  &:hover {
-    color: $white;
   }
 }

@@ -19,6 +19,7 @@
 html {
   font-size: 18px;
   position: relative;
+  scroll-behavior: smooth;
 }
 @media screen and (max-width: 768px) {
   html {
@@ -123,6 +124,25 @@ footer {
   height: 100%;
   margin: 0 auto;
   position: relative;
+}
+
+.colors, .video {
+  background: #F8FAF9;
+}
+
+.InDev {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -761,12 +781,6 @@ template {
   max-width: 9.0555555556rem;
   cursor: pointer;
 }
-@media screen and (max-width: 480px) {
-  .btn {
-    font-size: 1rem;
-  }
-}
-
 .btn--bg--red {
   background-color: #E01F3D;
   color: #FFFFFF;
@@ -774,7 +788,6 @@ template {
 .btn--bg--red:hover {
   background-color: #CA1B36;
 }
-
 .btn__reset {
   background: none;
   border: none;
@@ -785,6 +798,11 @@ template {
 }
 .btn__reset:hover {
   color: #FFFFFF;
+}
+@media screen and (max-width: 480px) {
+  .btn {
+    font-size: 1rem;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -1208,17 +1226,17 @@ template {
   display: -ms-flexbox;
   display: flex;
   height: 100vh;
-  width: 5%;
+  width: 1.1111111111rem;
   top: 0;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 .slider-controls__arrow--left {
-  left: -0.5555555556rem;
+  left: 0rem;
 }
 .slider-controls__arrow--right {
-  right: -2.2222222222rem;
+  right: 0rem;
 }
 @media screen and (max-width: 768px) {
   .slider-controls__arrow {
@@ -1722,6 +1740,10 @@ template {
       -ms-flex: 1;
           flex: 1;
 }
+.input__block .form__error {
+  color: #E01F3D;
+  font-size: 0.7777777778rem;
+}
 
 .input__title {
   cursor: pointer;
@@ -1846,6 +1868,10 @@ template {
   }
 }
 
+.form-input--warning {
+  border: 2px solid red;
+}
+
 .map {
   background: url("../img/map.png") center center/cover no-repeat;
 }
@@ -1955,6 +1981,9 @@ template {
 .fixed-menu__link:hover {
   background: #E01F3D;
 }
+.fixed-menu__link--white {
+  background: white;
+}
 .fixed-menu__link--active {
   background: #E01F3D;
   position: relative;
@@ -1975,13 +2004,66 @@ template {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
+  width: 100vw;
   height: 0vh;
   background: #333537;
   opacity: 0;
-  top: 0;
+}
+.modal--main {
+  top: -111.1111111111rem;
   left: 0;
   z-index: 20;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: height 0.2s;
+  transition: height 0.2s;
+}
+.modal--main--active {
+  height: 100vh;
+  opacity: 1;
+  top: 0rem;
+}
+.modal--form {
+  top: 0;
+  left: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: rgba(51, 53, 55, 0.6980392157);
+}
+.modal--form--active {
+  opacity: 1;
+  height: 100vh;
+  width: 100vw;
+}
+
+.modal--form__content {
+  background: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 30vh;
+  height: 18vh;
+  border-radius: 5px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  row-gap: 1vh;
+}
+
+.modal--form__text {
+  color: #000000;
+  font-size: 1rem;
+}
+
+.modal--form__text--error {
+  color: #E01F3D;
 }
