@@ -37,13 +37,19 @@
 .modal--form__content {
   background: #FFFFFF;
   display: flex;
-  width: 30vh;
-  height: 18vh;
+  width: auto;
+  height: auto;
+  padding: rem(35px) rem(55px);
   border-radius: 5px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   row-gap: 1vh;
+  text-align: center;
+
+  @include phones {
+    padding: rem(25px) rem(25px);
+  }
 }
 
 .modal--form__text {

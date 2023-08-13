@@ -233,6 +233,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
     
 
     if (validateFrom(form)) {
+
+      responseText.classList.remove('modal--form__text--error');
       
       const data = {
         name: form.elements.name.value,
@@ -245,22 +247,25 @@ document.addEventListener("DOMContentLoaded", function (event) {
       xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
       xhr.setRequestHeader('content-type', 'application/json');
       xhr.send(JSON.stringify(data));
-      console.log(xhr.readyState);
-      xhr.addEventListener('load', e => {
+      
+      xhr.addEventListener('progress', e => {
         
-        const response = JSON.parse(xhr.response);
+        if (e.target.status == 200) {
 
-        if (response.status) {
-          responseText.textContent = response.message + "!";
+        const response = JSON.parse(xhr.response);
+        responseText.textContent = response.message + "!";
+
         } else {
+
           responseText.textContent = "Ошибка запроса! Попробуйте позже!";
+          responseText.classList.add('modal--form__text--error');
+        
         }
 
         formModal.classList.add('modal--form--active');
         body.style.overflow = 'hidden';
 
       });
-
 
     }
 

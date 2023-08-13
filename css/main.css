@@ -2043,8 +2043,9 @@ template {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 30vh;
-  height: 18vh;
+  width: auto;
+  height: auto;
+  padding: 1.9444444444rem 3.0555555556rem;
   border-radius: 5px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -2057,6 +2058,12 @@ template {
       -ms-flex-pack: center;
           justify-content: center;
   row-gap: 1vh;
+  text-align: center;
+}
+@media screen and (max-width: 480px) {
+  .modal--form__content {
+    padding: 1.3888888889rem 1.3888888889rem;
+  }
 }
 
 .modal--form__text {
