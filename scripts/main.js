@@ -83,6 +83,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
   // Shop section functional
   const arrowLeft = document.querySelector('.arrow--left');
   const arrowRight = document.querySelector('.arrow--right');
+  const shopImgSlider = document.querySelector('.shop__img-wrapper');
+  
+  const shopContentSlider = document.querySelector('.shop__content');
+
   const item = {
     shopItemImg: document.querySelector('.shop__img'),
     dropMenu: document.querySelector('.dropdown-menu__list'),
@@ -93,10 +97,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
     orderBtn: document.querySelector('.order-btn')
   };
   let itemNum = 0;
-  item.shopItemImg.src = SHOP_BASE[0].imgUrlDesktop;  
+  item.shopItemImg.src = SHOP_BASE[0].imgUrlDesktop;
   
-  let addShopSliderContent = () => {
-    item.shopItemImg.src = SHOP_BASE[itemNum].imgUrlDesktop;
+  const addShopSliderContent = () => {
     item.dropMenu.childNodes[1].childNodes[3].innerHTML = SHOP_BASE[itemNum].bluetoothVersion;
     item.dropMenu.childNodes[3].childNodes[3].innerHTML = SHOP_BASE[itemNum].range;
     item.dropMenu.childNodes[5].childNodes[3].innerHTML = SHOP_BASE[itemNum].charger;
@@ -110,12 +113,60 @@ document.addEventListener("DOMContentLoaded", function (event) {
     item.orderBtn.href = SHOP_BASE[itemNum].orderBtnUrl;
   };
 
+  const addNextImgSlide = (index, direction) => {
+    let activeImg = document.querySelector('.shop__img--active');
+    
+    if(direction == 'toLeft') {
+      if (index > SHOP_BASE.length - 1) {
+        index = 0;      
+      }
+    }
+
+    if(direction == 'toRight') {
+      if (index < 0) {
+        index = SHOP_BASE.length - 1;      
+      }
+    }
+
+    let img = document.createElement('img');
+      img.classList.add('shop__img');
+      img.classList.add('shop__img--' + direction);
+      img.src = SHOP_BASE[index].imgUrlDesktop;
+      console.log(img);
+
+      if(direction == 'toLeft') {
+        shopImgSlider.append(img);
+        img.addEventListener('load', () => {
+          img.classList.remove('shop__img--' + direction);
+          activeImg.classList.remove('shop__img--active');
+          shopImgSlider.removeChild(activeImg);
+          img.classList.add('shop__img--active');
+        });
+      }
+      if(direction == 'toRight') {
+        shopImgSlider.prepend(img);
+        img.addEventListener('load', () => {
+          img.classList.remove('shop__img--' + direction);
+          shopImgSlider.removeChild(activeImg);
+          img.classList.add('shop__img--active');
+        });
+      }
+    
+  };
+
+  // const addNextContentSlide = (index) => {
+    
+  // };
+
+
   arrowLeft.addEventListener('click', () => {
     itemNum--;
 
     if (itemNum < 0) {
       itemNum = SHOP_BASE.length - 1;
     }
+
+    addNextImgSlide(itemNum, 'toLeft');
 
     addShopSliderContent();
   });
@@ -126,6 +177,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
     if (itemNum >= SHOP_BASE.length) {
       itemNum = 0;
     }
+
+    addNextImgSlide(itemNum, 'toRight');
     
     addShopSliderContent();
   });

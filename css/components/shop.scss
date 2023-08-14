@@ -11,6 +11,7 @@
 .shop__list {
   display: flex;
   height: 100%;
+  overflow: hidden;
 }
 
 .shop__item {
@@ -28,7 +29,7 @@
   }
 }
 
-.shop__img-wrapper {
+.slider-controls {
   width: 46%;
   display: flex;
 
@@ -39,16 +40,42 @@
   }
 }
 
-.shop__img {
-  width: 100%;
-  transition: .3s;
-  
-  &::selection {
+.shop__img-wrapper {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  width: 46vw;
+  height: 46vw;
+  border-radius: 50%;
+
+  ::selection {
     background: none;
   }
 
   @include tablets {
-    width: 50%;
+    width: 46vw;
+  }
+}
+
+.shop__img {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  transition: left .5s;
+  
+  &--toLeft {
+    left: -100%;
+  }
+
+  &--toRight {
+    left: 100%;
+  }
+
+  @include tablets {
+    width: 100%;
   }
 }
 
@@ -95,6 +122,10 @@
   text-transform: uppercase;
   line-height: 2.4rem;
   margin-top: 3vh;
+
+  ::selection {
+    background-color: red;
+  }
 
   @include tablets {
     font-size: rem(28px);

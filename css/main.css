@@ -1003,6 +1003,7 @@ template {
   display: -ms-flexbox;
   display: flex;
   height: 100%;
+  overflow: hidden;
 }
 
 .shop__item {
@@ -1032,14 +1033,14 @@ template {
   }
 }
 
-.shop__img-wrapper {
+.slider-controls {
   width: 46%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 @media screen and (max-width: 768px) {
-  .shop__img-wrapper {
+  .slider-controls {
     width: 100%;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -1050,20 +1051,50 @@ template {
   }
 }
 
-.shop__img {
-  width: 100%;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+.shop__img-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  width: 46vw;
+  height: 46vw;
+  border-radius: 50%;
 }
-.shop__img::-moz-selection {
+.shop__img-wrapper ::-moz-selection {
   background: none;
 }
-.shop__img::selection {
+.shop__img-wrapper ::selection {
   background: none;
 }
 @media screen and (max-width: 768px) {
+  .shop__img-wrapper {
+    width: 46vw;
+  }
+}
+
+.shop__img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 0;
+  -webkit-transition: left 0.5s;
+  transition: left 0.5s;
+}
+.shop__img--toLeft {
+  left: -100%;
+}
+.shop__img--toRight {
+  left: 100%;
+}
+@media screen and (max-width: 768px) {
   .shop__img {
-    width: 50%;
+    width: 100%;
   }
 }
 
@@ -1127,6 +1158,12 @@ template {
   text-transform: uppercase;
   line-height: 2.4rem;
   margin-top: 3vh;
+}
+.shop__header ::-moz-selection {
+  background-color: red;
+}
+.shop__header ::selection {
+  background-color: red;
 }
 @media screen and (max-width: 768px) {
   .shop__header {
@@ -1445,6 +1482,7 @@ template {
 }
 
 .employee__control {
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1458,13 +1496,12 @@ template {
      -moz-column-gap: 0.5vw;
           column-gap: 0.5vw;
 }
+.employee__control:hover {
+  color: #E01F3D;
+}
 
 .employee__name {
-  cursor: pointer;
   white-space: nowrap;
-}
-.employee__name:hover {
-  color: #E01F3D;
 }
 
 .employee__status {
@@ -2004,7 +2041,7 @@ template {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100vw;
+  width: 100%;
   height: 0vh;
   background: #333537;
   opacity: 0;

@@ -77,19 +77,19 @@
 }
 
 .employee__control {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: baseline;
   column-gap: .5vw;
-}
-
-.employee__name {
-  cursor: pointer;
-  white-space: nowrap;
-
+  
   &:hover {
     color: $red;
   }
+}
+
+.employee__name {
+  white-space: nowrap;
 }
 
 .employee__status {
