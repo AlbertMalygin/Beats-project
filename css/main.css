@@ -1057,7 +1057,7 @@ template {
   display: flex;
   overflow: hidden;
   position: relative;
-  width: 46vw;
+  width: 100%;
   height: 46vw;
   border-radius: 50%;
 }
