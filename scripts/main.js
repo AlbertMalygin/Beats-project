@@ -413,6 +413,78 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
   // Window scroll events
+  let mobileMoveDirection = 0;
+
+  // window.addEventListener('touchstart', e => {
+  //   console.log(mobileMoveDirection);
+  //   mobileMoveDirection = e.changedTouches[0].clientY;
+  // });
+
+  // window.addEventListener('touchend', e => {
+  //   mobileMoveDirection = mobileMoveDirection - e.changedTouches[0].clientY;
+  //   if (mobileMoveDirection < 0 ) {
+  //     console.log('up');
+  //   } else {
+  //     console.log('down');
+  //   }
+
+  //   mobileMoveDirection = 0;
+  // });
+
+  let addMobileScrollEvent = function(sectionsArr , i) {
+    sectionsArr[i].addEventListener('touchstart', e => {
+      console.log(mobileMoveDirection);
+      mobileMoveDirection = e.changedTouches[0].clientY;
+    });
+
+    sectionsArr[i].addEventListener('touchend', e => {
+      mobileMoveDirection = mobileMoveDirection - e.changedTouches[0].clientY;
+      if (mobileMoveDirection < 0 ) {
+        console.log('up');
+      } else {
+        console.log('down');
+      }
+
+      
+      windowPositionX = windowHeight * i;
+      let index;
+
+      if (mobileMoveDirection < 0) {
+        windowPositionX -= windowHeight;
+        window.scrollTo(0, windowPositionX);
+      } else if (mobileMoveDirection > 0) {
+        windowPositionX += windowHeight;
+        window.scrollTo(0, windowPositionX);
+      }
+
+      index = windowPositionX / windowHeight;
+
+      removeClass(fixedMenuLinks, 'fixed-menu__link--active');
+      removeClass(fixedMenuLinks, 'fixed-menu__link--bg--red--active');
+
+      if (windowPositionX >= windowHeight * 4 && windowPositionX < windowHeight * 5) {
+        addClass(fixedMenuLinks, 'fixed-menu__link--bg--red');
+        fixedMenuLinks[index].classList.add('fixed-menu__link--bg--red--active');
+      } else {
+        removeClass(fixedMenuLinks, 'fixed-menu__link--bg--red');
+        if(index >= 0 && index < sections.length-1) {
+          fixedMenuLinks[index].classList.add('fixed-menu__link--active');
+        } else if (index < 0){
+          fixedMenuLinks[0].classList.add('fixed-menu__link--active');
+        } else if(index >= sections.length-1){
+          fixedMenuLinks[sections.length-2].classList.add('fixed-menu__link--active');
+        }
+      }
+
+      if (windowPositionX >= windowHeight * 7 && windowPositionX < windowHeight * 8) {
+        addClass(fixedMenuLinks, 'fixed-menu__link--white');
+      } else {
+        removeClass(fixedMenuLinks, 'fixed-menu__link--white');
+      }
+
+      mobileMoveDirection = 0;
+    });
+  };
   
   let addWheelEvent = function(sectionsArr , i) {
     sectionsArr[i].addEventListener('wheel', e => {
@@ -456,6 +528,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   for (let i = 0; i < sections.length; i++) {
     addWheelEvent(sections, i);
+    addMobileScrollEvent(sections, i);
   }
 
   
@@ -474,5 +547,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
   });
 
 
-
+  //tests
+  
 });
