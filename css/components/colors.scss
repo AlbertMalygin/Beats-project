@@ -3,14 +3,14 @@ $tabletContentWidth: 70vW;
 
 
 .colors {
-  background: url('../../img/colors-bg.png') 80% 0% / cover no-repeat;
+  background: url('../img/colors-bg.png') 80% 0% / cover no-repeat;
 
   @include tablets {
-    background: url('../../img/colors-bg.png') 70% 0% / cover no-repeat;
+    background: url('../img/colors-bg.png') 70% 0% / cover no-repeat;
   }
 
   @include phones {
-    background: url('../../img/colors-bg.png') 60% 0% / cover no-repeat;
+    background: url('../img/colors-bg.png') 60% 0% / cover no-repeat;
   }
 }
 

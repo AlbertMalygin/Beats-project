@@ -26,10 +26,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     if(hamburgerBtn.checked) {
       modalWindow.classList.add('modal--main--active');
-      body.style.overflow = 'hidden';
     } else {
       modalWindow.classList.remove('modal--main--active');
-      body.style.overflow = 'visible';
     }
 
   });
@@ -37,7 +35,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
   modalWindow.addEventListener('click', function(e){
     if(hamburgerBtn.checked) {
       modalWindow.classList.remove('modal--main--active');
-      body.style.overflow = 'visible';
       hamburgerBtn.checked = false;
     }
   });
@@ -256,6 +253,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   const formModal = document.querySelector('.modal--form');
   const modalOffBtn = document.querySelector('.btn--modal--off');
   const responseText = document.querySelector('.modal--form__text');
+  
 
   formSendBtn.addEventListener('click', e => {
     e.preventDefault();
@@ -293,7 +291,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
         }
 
         formModal.classList.add('modal--form--active');
-        body.style.overflow = 'hidden';
 
       });
 
@@ -302,7 +299,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
         responseText.textContent = "Ошибка соединения!";
         responseText.classList.add('modal--form__text--error');
         formModal.classList.add('modal--form--active');
-        body.style.overflow = 'hidden';
 
       });
 
@@ -354,13 +350,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   modalOffBtn.addEventListener('click', (e) => {
     formModal.classList.remove('modal--form--active');
-    body.style.overflow = 'visible';
   });
 
   formModal.addEventListener('click', (e) => {
     if (e.target == formModal) {
       formModal.classList.remove('modal--form--active');
-      body.style.overflow = 'visible';
     }
   });
 
@@ -417,20 +411,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
   let addMobileScrollEvent = function(sectionsArr , i) {
-    sectionsArr[i].addEventListener('touchstart', e => {
-      console.log(mobileMoveDirection);
+    sectionsArr[i].addEventListener('touchstart', e => {      
       mobileMoveDirection = e.changedTouches[0].clientY;
     });
 
     sectionsArr[i].addEventListener('touchend', e => {
+      
       mobileMoveDirection = mobileMoveDirection - e.changedTouches[0].clientY;
       windowPositionX = windowHeight * i;
       let index;
 
-      if (mobileMoveDirection < 0) {
+      if (mobileMoveDirection < 0 && mobileMoveDirection < -50) {        
         windowPositionX -= windowHeight;
         window.scrollTo(0, windowPositionX);
-      } else if (mobileMoveDirection > 0) {
+      } else if (mobileMoveDirection > 0 && mobileMoveDirection > 50) {
         windowPositionX += windowHeight;
         window.scrollTo(0, windowPositionX);
       }

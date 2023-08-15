@@ -1554,16 +1554,16 @@ template {
 }
 
 .colors {
-  background: url("../../img/colors-bg.png") 80% 0%/cover no-repeat;
+  background: url("../img/colors-bg.png") 80% 0%/cover no-repeat;
 }
 @media screen and (max-width: 768px) {
   .colors {
-    background: url("../../img/colors-bg.png") 70% 0%/cover no-repeat;
+    background: url("../img/colors-bg.png") 70% 0%/cover no-repeat;
   }
 }
 @media screen and (max-width: 480px) {
   .colors {
-    background: url("../../img/colors-bg.png") 60% 0%/cover no-repeat;
+    background: url("../img/colors-bg.png") 60% 0%/cover no-repeat;
   }
 }
 
