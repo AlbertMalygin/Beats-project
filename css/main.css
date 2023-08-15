@@ -20,6 +20,7 @@ html {
   font-size: 18px;
   position: relative;
   scroll-behavior: smooth;
+  overflow: hidden;
 }
 @media screen and (max-width: 768px) {
   html {
@@ -1672,10 +1673,10 @@ template {
 }
 @media screen and (max-width: 768px) {
   .colors-slider__content .colors-slider__inner-text {
-    width: 68vW;
+    width: 70vW;
   }
   .colors-slider__content--active {
-    height: 68vW;
+    height: 70vW;
   }
 }
 
@@ -2146,7 +2147,7 @@ template {
   background: #E01F3D;
 }
 .fixed-menu__link--white {
-  background: white;
+  background: #FFFFFF;
 }
 .fixed-menu__link--active {
   background: #E01F3D;
@@ -2158,6 +2159,26 @@ template {
   width: 1.0555555556rem;
   height: 1.0555555556rem;
   border: 0.1111111111rem solid #E01F3D;
+  border-radius: 50%;
+  right: -0.3888888889rem;
+  top: -0.3888888889rem;
+}
+.fixed-menu__link--bg--red {
+  background: #292929;
+}
+.fixed-menu__link--bg--red:hover {
+  background: #FFFFFF;
+}
+.fixed-menu__link--bg--red--active {
+  background: #FFFFFF;
+  position: relative;
+}
+.fixed-menu__link--bg--red--active::before {
+  content: "";
+  position: absolute;
+  width: 1.0555555556rem;
+  height: 1.0555555556rem;
+  border: 0.1111111111rem solid #FFFFFF;
   border-radius: 50%;
   right: -0.3888888889rem;
   top: -0.3888888889rem;

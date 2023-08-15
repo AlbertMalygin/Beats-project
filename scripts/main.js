@@ -8,51 +8,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
   const screenWidth = window.innerWidth;
   const sections = document.querySelectorAll('.section');
   const body = document.querySelector('body');
+  const windowHeight = +getComputedStyle(sections[0]).height.split('px')[0];
+  let windowPositionX;
 
   let removeClass = (arr, classToRemove) => {
     for (let n = 0; n < arr.length; n++) {
       arr[n].classList.remove(classToRemove);
     }
-  };
-
-  // Nav menu
-  const fixedMenuLinks = document.querySelectorAll('.fixed-menu__link');
-  const headerMeenuLinks = document.querySelectorAll('.menu__link--header');
-  const modalMenuLinks = document.querySelectorAll('.menu__link--modal');
-  let windowHeight = +getComputedStyle(sections[0]).height.split('px')[0];
-  let windowPositionX;
-
-  let addClass = (arr, classToAdd) => {
-    for (let n = 0; n < arr.length; n++) {
-      arr[n].classList.add(classToAdd);
-    }
-  };
-
-  let addMenuClickEvent = function(linksArr, i) {
-    linksArr[i].addEventListener('click', function(e) {    
-      windowPositionX = windowHeight * i;
-
-      removeClass(fixedMenuLinks, 'fixed-menu__link--active');
-
-      fixedMenuLinks[i].classList.add('fixed-menu__link--active');
-
-      if (windowPositionX >= windowHeight * 7 && windowPositionX < windowHeight * 8) {
-        addClass(fixedMenuLinks, 'fixed-menu__link--white');
-      } else {
-        removeClass(fixedMenuLinks, 'fixed-menu__link--white');
-      }
-    });
-  };
-
-  for (let i = 0; i < fixedMenuLinks.length; i++) {  
-    addMenuClickEvent(fixedMenuLinks, i);
-  }
-
-  for (let i = 0; i < headerMeenuLinks.length; i++) {  
-    addMenuClickEvent(headerMeenuLinks, i);
-    addMenuClickEvent(modalMenuLinks, i);
-  }
-
+  };  
 
   // Modal menu
   const hamburgerBtn = document.querySelector('.hamburger__checkbox');
@@ -80,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   });
 
 
-  // Shop section functional
+  // Shop section
   const arrowLeft = document.querySelector('.arrow--left');
   const arrowRight = document.querySelector('.arrow--right');
   const shopImgSlider = document.querySelector('.shop__img-wrapper');
@@ -177,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-  // Team section functional
+  // Team section
   const imgUrls = [
                     './img/employee/boris.png',
                     './img/employee/alla.png',
@@ -395,14 +358,106 @@ document.addEventListener("DOMContentLoaded", function (event) {
   });
 
   formModal.addEventListener('click', (e) => {
-    if(e.target == formModal) {
+    if (e.target == formModal) {
       formModal.classList.remove('modal--form--active');
       body.style.overflow = 'visible';
     }
   });
 
+  // Nav menu
+  const fixedMenuLinks = document.querySelectorAll('.fixed-menu__link');
+  const headerMeenuLinks = document.querySelectorAll('.menu__link--header');
+  const modalMenuLinks = document.querySelectorAll('.menu__link--modal');
+  
+
+  let addClass = (arr, classToAdd) => {
+    for (let n = 0; n < arr.length; n++) {
+      arr[n].classList.add(classToAdd);
+    }
+  };
+
+  let addMenuClickEvent = function(linksArr, i) {
+    linksArr[i].addEventListener('click', function(e) {    
+      windowPositionX = windowHeight * i;
+
+      removeClass(fixedMenuLinks, 'fixed-menu__link--active');
+      removeClass(fixedMenuLinks, 'fixed-menu__link--bg--red--active');
+
+      if (windowPositionX >= windowHeight * 4 && windowPositionX < windowHeight * 5) {
+        addClass(fixedMenuLinks, 'fixed-menu__link--bg--red');
+        fixedMenuLinks[i].classList.add('fixed-menu__link--bg--red--active');
+      } else {
+        removeClass(fixedMenuLinks, 'fixed-menu__link--bg--red');
+        fixedMenuLinks[i].classList.add('fixed-menu__link--active');
+      }
+
+      if (windowPositionX >= windowHeight * 7 && windowPositionX < windowHeight * 8) {
+        addClass(fixedMenuLinks, 'fixed-menu__link--white');
+      } else {
+        removeClass(fixedMenuLinks, 'fixed-menu__link--white');
+      }
+
+      
+    });  
+  };
+
+  for (let i = 0; i < fixedMenuLinks.length; i++) {  
+    addMenuClickEvent(fixedMenuLinks, i);
+  }
+
+  for (let i = 0; i < headerMeenuLinks.length; i++) {  
+    addMenuClickEvent(headerMeenuLinks, i);
+    addMenuClickEvent(modalMenuLinks, i);
+  }
+
+
 
   // Window scroll events
+  
+  let addWheelEvent = function(sectionsArr , i) {
+    sectionsArr[i].addEventListener('wheel', e => {
+      windowPositionX = windowHeight * i;
+      let index;
+
+      if (e.deltaY < 0) {
+        windowPositionX -= windowHeight;
+        window.scrollTo(0, windowPositionX);
+      } else if (e.deltaY > 0) {
+        windowPositionX += windowHeight;
+        window.scrollTo(0, windowPositionX);
+      }
+
+      index = windowPositionX / windowHeight;
+
+      removeClass(fixedMenuLinks, 'fixed-menu__link--active');
+      removeClass(fixedMenuLinks, 'fixed-menu__link--bg--red--active');
+
+      if (windowPositionX >= windowHeight * 4 && windowPositionX < windowHeight * 5) {
+        addClass(fixedMenuLinks, 'fixed-menu__link--bg--red');
+        fixedMenuLinks[index].classList.add('fixed-menu__link--bg--red--active');
+      } else {
+        removeClass(fixedMenuLinks, 'fixed-menu__link--bg--red');
+        if(index >= 0 && index < sections.length-1) {
+          fixedMenuLinks[index].classList.add('fixed-menu__link--active');
+        } else if (index < 0){
+          fixedMenuLinks[0].classList.add('fixed-menu__link--active');
+        } else if(index >= sections.length-1){
+          fixedMenuLinks[sections.length-2].classList.add('fixed-menu__link--active');
+        }
+      }
+
+      if (windowPositionX >= windowHeight * 7 && windowPositionX < windowHeight * 8) {
+        addClass(fixedMenuLinks, 'fixed-menu__link--white');
+      } else {
+        removeClass(fixedMenuLinks, 'fixed-menu__link--white');
+      }
+    });
+  };
+
+  for (let i = 0; i < sections.length; i++) {
+    addWheelEvent(sections, i);
+  }
+
   
 
   // Window resize events

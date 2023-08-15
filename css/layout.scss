@@ -1,13 +1,14 @@
 * {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
-  // overflow: hidden;
+  
 }
 
 html {
   font-size: $baseFontSize;
   position: relative;
   scroll-behavior: smooth;
+  overflow: hidden;
 
   @include tablets {
     font-size: $baseFontSize - 1px;
