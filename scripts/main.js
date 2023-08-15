@@ -85,8 +85,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
   const arrowRight = document.querySelector('.arrow--right');
   const shopImgSlider = document.querySelector('.shop__img-wrapper');
   
-  const shopContentSlider = document.querySelector('.shop__content');
-
   const item = {
     shopItemImg: document.querySelector('.shop__img'),
     dropMenu: document.querySelector('.dropdown-menu__list'),
@@ -118,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     
     if(direction == 'toLeft') {
       if (index > SHOP_BASE.length - 1) {
-        index = 0;      
+        index = 0;
       }
     }
 
@@ -132,7 +130,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
       img.classList.add('shop__img');
       img.classList.add('shop__img--' + direction);
       img.src = SHOP_BASE[index].imgUrlDesktop;
-      console.log(img);
 
       if(direction == 'toLeft') {
         shopImgSlider.append(img);
@@ -153,11 +150,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
       }
     
   };
-
-  // const addNextContentSlide = (index) => {
-    
-  // };
-
 
   arrowLeft.addEventListener('click', () => {
     itemNum--;
@@ -237,8 +229,30 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 
+  //Colors section
+  const colorSlideControls= document.querySelectorAll('.colors-slider__control');
+  const colorSlideTxts= document.querySelectorAll('.colors-slider__content');
 
-  // Review section functional
+
+  for (let i = 0; i < colorSlideControls.length; i++) {
+    colorSlideControls[i].addEventListener('click', () => {
+      
+      if (colorSlideTxts[i].classList.contains('colors-slider__content--active')) {
+        colorSlideTxts[i].classList.remove('colors-slider__content--active');
+      } else {
+        
+        for (let n = 0; n < colorSlideControls.length; n++) {
+          colorSlideTxts[n].classList.remove('colors-slider__content--active');
+        }
+        
+        colorSlideTxts[i].classList.add('colors-slider__content--active');
+      }
+      
+    });
+  }
+
+
+  // Review section
   const user = {
     userImg: document.querySelector('.review__user-photo'),
     reviewHeader: document.querySelector('.review__title'),
