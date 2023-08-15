@@ -415,21 +415,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
   // Window scroll events
   let mobileMoveDirection = 0;
 
-  // window.addEventListener('touchstart', e => {
-  //   console.log(mobileMoveDirection);
-  //   mobileMoveDirection = e.changedTouches[0].clientY;
-  // });
-
-  // window.addEventListener('touchend', e => {
-  //   mobileMoveDirection = mobileMoveDirection - e.changedTouches[0].clientY;
-  //   if (mobileMoveDirection < 0 ) {
-  //     console.log('up');
-  //   } else {
-  //     console.log('down');
-  //   }
-
-  //   mobileMoveDirection = 0;
-  // });
 
   let addMobileScrollEvent = function(sectionsArr , i) {
     sectionsArr[i].addEventListener('touchstart', e => {
@@ -439,13 +424,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     sectionsArr[i].addEventListener('touchend', e => {
       mobileMoveDirection = mobileMoveDirection - e.changedTouches[0].clientY;
-      if (mobileMoveDirection < 0 ) {
-        console.log('up');
-      } else {
-        console.log('down');
-      }
-
-      
       windowPositionX = windowHeight * i;
       let index;
 
@@ -513,6 +491,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
           fixedMenuLinks[index].classList.add('fixed-menu__link--active');
         } else if (index < 0){
           fixedMenuLinks[0].classList.add('fixed-menu__link--active');
+          location.reload();
         } else if(index >= sections.length-1){
           fixedMenuLinks[sections.length-2].classList.add('fixed-menu__link--active');
         }
