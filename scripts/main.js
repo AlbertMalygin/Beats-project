@@ -443,6 +443,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
           fixedMenuLinks[index].classList.add('fixed-menu__link--active');
         } else if (index < 0){
           fixedMenuLinks[0].classList.add('fixed-menu__link--active');
+          location.reload();
         } else if(index >= sections.length-1){
           fixedMenuLinks[sections.length-2].classList.add('fixed-menu__link--active');
         }
@@ -485,7 +486,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
           fixedMenuLinks[index].classList.add('fixed-menu__link--active');
         } else if (index < 0){
           fixedMenuLinks[0].classList.add('fixed-menu__link--active');
-          location.reload();
         } else if(index >= sections.length-1){
           fixedMenuLinks[sections.length-2].classList.add('fixed-menu__link--active');
         }
