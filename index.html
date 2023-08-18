@@ -30,7 +30,7 @@
                   <a href="#team" class="menu__link menu__link--header">Команда</a>
                 </li>
                 <li class="menu__item menu__item--header">
-                  <a href="#Colors" class="menu__link menu__link--header">Цвета</a>
+                  <a href="#colors" class="menu__link menu__link--header">Цвета</a>
                 </li>
                 <li class="menu__item menu__item--header">
                   <a href="#reviews" class="menu__link menu__link--header">Отзывы</a>
@@ -39,7 +39,7 @@
                   <a href="#video" class="menu__link menu__link--header">Как мы работаем</a>
                 </li>
                 <li class="menu__item menu__item--header">
-                  <a href="#footer" class="menu__link menu__link--header">Контакты</a>
+                  <a href="#map" class="menu__link menu__link--header">Контакты</a>
                 </li>
               </ul>
             </nav>
@@ -363,7 +363,7 @@
       </div>
     </section>
 
-    <section id="Colors" class="section colors">
+    <section id="colors" class="section colors">
       <!-- <div class="container"> -->
         <div class="colors-header__wrapper">
           <h2 class="colors-header">Цвета</h2>
@@ -433,7 +433,39 @@
 
     <section id="video" class="section video">
       <div class="container">
-        <h2 class="InDev">Секция "Video" в Разработке</h2>
+        <h2 class="video__title">как мы работаем</h2>
+        <div class="video-player__container">
+          <div class="player paused">
+            <div class="player__wrapper">
+              <div id="yt-player" class="player__playback">
+              </div>
+              <div class="player__intro-frame player__intro-frame--paused">
+                <button class="player__intro-frame-btn"></button>
+              </div>
+            </div>
+            <div class="player__controls">
+              <button class="player__start player__start--paused">
+                <div class="player__start-paused-icon"></div>
+                <div class="player__start-paused-icon"></div>
+              </button>
+              <div class="player__duration">
+                <div class="player__duration-line">
+                  <div class="player__duration-line-position"></div>
+                </div>
+                <button class="player__duration-btn"></button>
+              </div>
+              <div class="player__sound">
+                <button class="player__sound-icon"></button>
+                <div class="player__sound-status">
+                  <div class="player__sound-line">
+                    <div class="player__sound-line-position"></div>
+                  </div>
+                  <button class="player__sound-btn"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -506,7 +538,7 @@
             </div>
             <div class="form__btns">
               <button type="submit" class="btn btn--bg--red">Заказать</button>
-              <button type="reset" class="btn__reset">Очистить</button>
+              <button type="reset" class="btn btn__reset">Очистить</button>
             </div>
           </div>
         </form>
@@ -575,18 +607,19 @@
     
   </div>
   
+  
 
   <div id="modal" class="modal modal--main">
     <div class="container">
       <nav class="menu menu--modal">
         <ul class="menu__list menu__list--modal">
-          <li class="menu__item menu__item--modal"><a href="#hero" class="menu__link menu__link--modal">О нас</a></li>
-          <li class="menu__item menu__item--modal"><a href="#features" class="menu__link menu__link--modal">Наушники</a></li>
-          <li class="menu__item menu__item--modal"><a href="#shop" class="menu__link menu__link--modal">Команда</a></li>
-          <li class="menu__item menu__item--modal"><a href="#team" class="menu__link menu__link--modal">Цвета</a></li>
-          <li class="menu__item menu__item--modal"><a href="#Colors" class="menu__link menu__link--modal">Отзывы</a></li>
-          <li class="menu__item menu__item--modal"><a href="#reviews" class="menu__link menu__link--modal">Как мы работаем</a></li>
-          <li class="menu__item menu__item--modal"><a href="#video" class="menu__link menu__link--modal">Контакты</a></li>
+          <li class="menu__item menu__item--modal"><a href="#features" class="menu__link menu__link--modal">О нас</a></li>
+          <li class="menu__item menu__item--modal"><a href="#shop" class="menu__link menu__link--modal">Наушники</a></li>
+          <li class="menu__item menu__item--modal"><a href="#team" class="menu__link menu__link--modal">Команда</a></li>
+          <li class="menu__item menu__item--modal"><a href="#colors" class="menu__link menu__link--modal">Цвета</a></li>
+          <li class="menu__item menu__item--modal"><a href="#reviews" class="menu__link menu__link--modal">Отзывы</a></li>
+          <li class="menu__item menu__item--modal"><a href="#video" class="menu__link menu__link--modal">Как мы работаем</a></li>
+          <li class="menu__item menu__item--modal"><a href="#map" class="menu__link menu__link--modal">Контакты</a></li>
         </ul>
       </nav>
     </div>
@@ -607,7 +640,7 @@
         <a href="#team" class="fixed-menu__link"></a>
       </li>
       <li class="fixed-menu__item">
-        <a href="#Colors" class="fixed-menu__link"></a>
+        <a href="#colors" class="fixed-menu__link"></a>
       </li>
       <li class="fixed-menu__item">
         <a href="#reviews" class="fixed-menu__link"></a>
@@ -622,10 +655,17 @@
         <a href="#map" class="fixed-menu__link"></a>
       </li>
     </ul>
-  </nav>  
+  </nav>
 
-  
+  <div class="up-button">
+    <a href="#hero" class="up-button__link">
+      <p>Вверх</p>
+      <div class="up-button__link-icon"></div>
+    </a>
+  </div>
+
+  <script src="https://www.youtube.com/iframe_api"></script>
   <script type="module" src="./scripts/main.js"></script>
-  
+  <script src="./scripts/video.js"></script>
 </body>
 </html>

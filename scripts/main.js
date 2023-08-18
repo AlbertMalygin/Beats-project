@@ -7,9 +7,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
   const tabletSize = 768;
   const screenWidth = window.innerWidth;
   const sections = document.querySelectorAll('.section');
-  const body = document.querySelector('body');
   const windowHeight = +getComputedStyle(sections[0]).height.split('px')[0];
-  let windowPositionX;
+  const fixedMenuLinks = document.querySelectorAll('.fixed-menu__link');
+  const headerMeenuLinks = document.querySelectorAll('.menu__link--header');
+  const modalMenuLinks = document.querySelectorAll('.menu__link--modal');
+  const upBtn = document.querySelector('.up-button__link');
+  let windowPositionX;  
+
+  let addClass = (arr, classToAdd) => {
+    for (let n = 0; n < arr.length; n++) {
+      arr[n].classList.add(classToAdd);
+    }
+  };
 
   let removeClass = (arr, classToRemove) => {
     for (let n = 0; n < arr.length; n++) {
@@ -17,11 +26,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
   };  
 
+
+
   // Modal menu
   const hamburgerBtn = document.querySelector('.hamburger__checkbox');
   const modalWindow = document.querySelector('.modal--main');
   
-
   hamburgerBtn.addEventListener('click', () => {
 
     if(hamburgerBtn.checked) {
@@ -38,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       hamburgerBtn.checked = false;
     }
   });
+
 
 
   // Shop section
@@ -189,10 +200,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 
+
+
   //Colors section
   const colorSlideControls= document.querySelectorAll('.colors-slider__control');
   const colorSlideTxts= document.querySelectorAll('.colors-slider__content');
-
 
   for (let i = 0; i < colorSlideControls.length; i++) {
     colorSlideControls[i].addEventListener('click', () => {
@@ -210,6 +222,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       
     });
   }
+
 
 
   // Review section
@@ -247,18 +260,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 
+
+
+  // Video section
+  
+
+
+
   // Form section
   const form = document.querySelector('.form');
   const formSendBtn = document.querySelector('.form .btn');
   const formModal = document.querySelector('.modal--form');
   const modalOffBtn = document.querySelector('.btn--modal--off');
-  const responseText = document.querySelector('.modal--form__text');
-  
+  const responseText = document.querySelector('.modal--form__text');  
 
   formSendBtn.addEventListener('click', e => {
-    e.preventDefault();
-
-    
+    e.preventDefault();    
 
     if (validateFrom(form)) {
 
@@ -303,7 +320,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
       });
 
     }
-
 
     function validateFrom(form) {
       let valid = true;
@@ -358,31 +374,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
   });
 
+
+
   // Nav menu
-  const fixedMenuLinks = document.querySelectorAll('.fixed-menu__link');
-  const headerMeenuLinks = document.querySelectorAll('.menu__link--header');
-  const modalMenuLinks = document.querySelectorAll('.menu__link--modal');
-  
-
-  let addClass = (arr, classToAdd) => {
-    for (let n = 0; n < arr.length; n++) {
-      arr[n].classList.add(classToAdd);
-    }
-  };
-
-  let addMenuClickEvent = function(linksArr, i) {
-    linksArr[i].addEventListener('click', function(e) {    
-      windowPositionX = windowHeight * i;
+  let addMenuClickEvent = function(linksArr, menuLinkIndex, fixedMenuLinkIndex) {
+    linksArr[menuLinkIndex].addEventListener('click', function(e) {    
+      windowPositionX = windowHeight * fixedMenuLinkIndex;
 
       removeClass(fixedMenuLinks, 'fixed-menu__link--active');
       removeClass(fixedMenuLinks, 'fixed-menu__link--bg--red--active');
 
       if (windowPositionX >= windowHeight * 4 && windowPositionX < windowHeight * 5) {
         addClass(fixedMenuLinks, 'fixed-menu__link--bg--red');
-        fixedMenuLinks[i].classList.add('fixed-menu__link--bg--red--active');
+        fixedMenuLinks[fixedMenuLinkIndex].classList.add('fixed-menu__link--bg--red--active');
       } else {
         removeClass(fixedMenuLinks, 'fixed-menu__link--bg--red');
-        fixedMenuLinks[i].classList.add('fixed-menu__link--active');
+        fixedMenuLinks[fixedMenuLinkIndex].classList.add('fixed-menu__link--active');
       }
 
       if (windowPositionX >= windowHeight * 7 && windowPositionX < windowHeight * 8) {
@@ -396,19 +403,31 @@ document.addEventListener("DOMContentLoaded", function (event) {
   };
 
   for (let i = 0; i < fixedMenuLinks.length; i++) {  
-    addMenuClickEvent(fixedMenuLinks, i);
+    addMenuClickEvent(fixedMenuLinks, i, i);
+    
+    for (let n = 0; n < headerMeenuLinks.length; n++) {
+      if (fixedMenuLinks[i].attributes['href'].value == modalMenuLinks[n].attributes['href'].value) {
+        addMenuClickEvent(headerMeenuLinks, n, i);
+        addMenuClickEvent(modalMenuLinks, n, i);
+      }
+    }
   }
 
-  for (let i = 0; i < headerMeenuLinks.length; i++) {  
-    addMenuClickEvent(headerMeenuLinks, i);
-    addMenuClickEvent(modalMenuLinks, i);
-  }
+
+
+  //Up button
+  upBtn.addEventListener('click', e => {
+    removeClass(fixedMenuLinks, 'fixed-menu__link--active');
+    removeClass(fixedMenuLinks, 'fixed-menu__link--bg--red--active');
+    removeClass(fixedMenuLinks, 'fixed-menu__link--bg--red');
+    removeClass(fixedMenuLinks, 'fixed-menu__link--white');
+    fixedMenuLinks[0].classList.add('fixed-menu__link--active');
+  });
 
 
 
   // Window scroll events
   let mobileMoveDirection = 0;
-
 
   let addMobileScrollEvent = function(sectionsArr , i) {
     sectionsArr[i].addEventListener('touchstart', e => {      
@@ -518,6 +537,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       addPhotoUrl(employeePhoto, imgUrls, employeeTabPhoto);
     }
   });
+
 
 
   //tests

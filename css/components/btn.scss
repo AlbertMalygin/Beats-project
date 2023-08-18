@@ -12,19 +12,22 @@
   &--bg--red {
     background-color: $red;
     color: $white;
+    transition: .3s;
   
     &:hover {
-      background-color: #CA1B36;
+      background-color: #b41930;
     }
   }
 
   &__reset {
+    text-transform: none;
     background: none;
     border: none;
     font-size: rem(16px);
     font-weight: 400;
     color: $red;
     cursor: pointer;
+    transition: .3s;
   
     &:hover {
       color: $white;
