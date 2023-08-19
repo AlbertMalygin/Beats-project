@@ -1,6 +1,5 @@
 
 
-
 const playerContainer = document.querySelector('.player');
 const videoIntroFrame = document.querySelector('.player__intro-frame');
 const videoStartBtn = document.querySelector('.player__start');

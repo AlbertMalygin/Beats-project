@@ -12,8 +12,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   const headerMeenuLinks = document.querySelectorAll('.menu__link--header');
   const modalMenuLinks = document.querySelectorAll('.menu__link--modal');
   const upBtn = document.querySelector('.up-button__link');
-  let windowPositionX;  
-
+  let windowPositionX;
   let addClass = (arr, classToAdd) => {
     for (let n = 0; n < arr.length; n++) {
       arr[n].classList.add(classToAdd);
