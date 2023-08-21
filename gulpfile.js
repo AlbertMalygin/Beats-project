@@ -48,16 +48,19 @@ const images = [
   'src/img/**/*.svg',
 ];
 
-task('images', () => {
+task('copy:images', () => {
   return src(images)
-    .pipe(dest('dist/img'))
-    .pipe(reload({ stream: true }));
+    .pipe(dest('dist/img'));
 });
 
-task('videos', () => {
+task('copy:videos', () => {
   return src('src/mp4/*.mp4')
-    .pipe(dest('dist/mp4'))
-    .pipe(reload({ stream: true }));
+    .pipe(dest('dist/mp4'));
+});
+
+task('copy:fonts', () => {
+  return src('src/css/fonts/*')
+    .pipe(dest('dist/css/fonts'));
 });
 
 task('server', () => {
@@ -74,4 +77,4 @@ task('watch', () => {
   watch('./src/*.html', series('copy:html'));
 });
 
-task('default', series('clean', parallel('images', 'copy:html', 'styles', 'scripts' ), parallel('watch','server')));
+task('default', series('clean', parallel('copy:images', 'copy:videos', 'copy:fonts', 'copy:html', 'styles', 'scripts' ), parallel('watch','server')));
