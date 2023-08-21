@@ -1,4 +1,4 @@
-export const SHOP_BASE = [
+const SHOP_BASE = [
   {
     name: "beats solo 3. цвет «атласное серебро»",
     imgUrlDesktop: "./img/shop-items/solo-3.png",

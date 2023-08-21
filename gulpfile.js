@@ -38,6 +38,7 @@ task('styles', () => {
 
 task('scripts', () => {
   return src('src/scripts/*.js')
+    .pipe(concat('main.js'))
     .pipe(uglify())
     .pipe(dest('dist/scripts'))
     .pipe(reload({ stream: true }));
@@ -77,4 +78,5 @@ task('watch', () => {
   watch('./src/*.html', series('copy:html'));
 });
 
-task('default', series('clean', parallel('copy:images', 'copy:videos', 'copy:fonts', 'copy:html', 'styles', 'scripts' ), parallel('watch','server')));
+
+task('default', series('clean', parallel('copy:images', 'copy:videos', 'copy:fonts', 'copy:html', 'styles', 'scripts'), parallel('watch','server')));

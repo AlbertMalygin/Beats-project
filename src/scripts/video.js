@@ -105,38 +105,3 @@ soundLvlLine.addEventListener('click', (e) => {
 playback();
 
 
-
-
-// const onPlayerStateChange = event => {
-//   switch (event.data) {
-//     case 1:
-//       videoIntroFrame.classList.remove('player__intro-frame--paused');
-//       videoStartBtn.classList.remove('player__start--paused');
-//       break;
-//     case 2:
-//       videoIntroFrame.classList.add('player__intro-frame--paused');
-//       videoStartBtn.classList.add('player__start--paused');
-//       break;
-//   }
-// };
-
-// function onYouTubeIframeAPIReady() {
-//   player = new YT.Player('yt-player', {
-//     height: '100%',
-//     width: '100%',
-//     videoId: 'Dd1VIeTMGQs',
-//     events: {
-//       'onReady': onPlayerReady,
-//       'onStateChange': onPlayerStateChange
-//     },
-//     playerVars: {
-//       controls: 0,
-//       disabled: 0,
-//       showinfo: 0,
-//       modestbranding: 0,
-//       rel: 0
-//     }
-//   });  
-// }
-
-

@@ -1,5 +1,5 @@
-import {SHOP_BASE} from "./shop_items.js";
-import {USERS_BASE} from "./reviews_authors.js";
+// import {SHOP_BASE} from "./shop_items.js";
+// import {USERS_BASE} from "./reviews_authors.js";
 
 document.addEventListener("DOMContentLoaded", function (event) {
   console.log('DOM Content Loaded Successfully!');
