@@ -1,0 +1,26 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: rem(30px);
+
+  @include tablets {
+    padding: 0 2%;
+  }
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  column-gap: rem(35px);
+  min-width: 76%;
+}
+
+.contacts {
+  min-width: rem(157px);
+  margin: auto;
+
+  @include tablets {
+    display: none;
+  }
+}

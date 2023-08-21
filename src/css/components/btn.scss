@@ -1,0 +1,40 @@
+.btn {
+  text-transform: uppercase;
+  border: none;
+  padding: rem(20px) rem(41px);
+  border-radius: rem(100px);
+  line-height: 1;
+  font-size: rem(16px);
+  font-weight: 700;
+  max-width: rem(163px);
+  cursor: pointer;
+
+  &--bg--red {
+    background-color: $red;
+    color: $white;
+    transition: .3s;
+  
+    &:hover {
+      background-color: #b41930;
+    }
+  }
+
+  &__reset {
+    text-transform: none;
+    background: none;
+    border: none;
+    font-size: rem(16px);
+    font-weight: 400;
+    color: $red;
+    cursor: pointer;
+    transition: .3s;
+  
+    &:hover {
+      color: $white;
+    }
+  }
+
+  @include phones{
+    font-size: rem(18px);
+  }
+}

@@ -1,0 +1,105 @@
+$desktopContentWidth: 50vW;
+$tabletContentWidth: 70vW;
+
+
+.colors {
+  background: url('../img/colors-bg.png') 80% 0% / cover no-repeat;
+
+  @include tablets {
+    background: url('../img/colors-bg.png') 70% 0% / cover no-repeat;
+  }
+
+  @include phones {
+    background: url('../img/colors-bg.png') 60% 0% / cover no-repeat;
+  }
+}
+
+.colors-header {
+  color: #FFFFFF;
+  padding: 10vh 10vw;
+}
+
+.color-slider__wrapper {
+  position: relative;
+}
+
+.colors-slider__list {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  height: 40vw;
+  width: 100vh;
+  flex-direction: column;
+  justify-content: end;
+  vertical-align: end;
+  transform: rotate(-90deg) translateY(-100%);
+  transform-origin: 100% 0;
+}
+
+.color-slider__item {
+  display: flex;
+  flex-direction: column;
+  width: 100vh;
+}
+
+.colors-slider__control {
+  cursor: pointer;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  color: $white;
+  height: 6vw;
+  width: 100%;
+  padding-left: 5%;
+
+  &--bg--silver {
+    background: #999999;
+  }
+
+  &--bg--black {
+    background: #151515;
+  }
+
+  &--bg--red {
+    background: #E01F3C;
+  }
+
+  @include tablets {
+    height: 10vw;
+  }
+}
+
+.colors-slider__content {
+  overflow: hidden;
+  display: flex;
+  background: #333537E5; 
+  height: 0;
+  transition: height .3s;
+
+  .colors-slider__inner-text {
+    color: $white;
+    display: flex;
+    font-size: 1rem;    
+    height: 100vh;
+    width: $desktopContentWidth;
+    padding: 2vw 3.5vw 0 2vw;
+    transform: rotate(90deg) translateY(-100%);
+    transform-origin: 0 0;
+  }
+
+  &--active {
+    height: $desktopContentWidth;
+    display: flex;
+  }
+
+  @include tablets {
+    .colors-slider__inner-text {
+      width: $tabletContentWidth;
+    }
+
+    &--active {
+      height: $tabletContentWidth;
+    }
+  }
+}

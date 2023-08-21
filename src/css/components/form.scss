@@ -1,0 +1,171 @@
+.form-section {
+  background: #181818;
+  color: $white;
+  font-size: rem(16px);
+  font-weight: 400;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: rem(50px);
+  }
+}
+
+.form__title {
+  color: $white;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  column-gap: rem(26px);
+
+  @include tablets {
+    flex-direction: column;
+    max-width: rem(466px);
+    margin: 0 auto;
+    row-gap: rem(14px);;
+  }
+
+  @include phones {
+    width: 85%;
+  }
+}
+
+.form__col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(14px);
+}
+
+.form__col:last-child {
+  row-gap: 0;
+}
+
+.form__row {
+  display: flex;
+  column-gap: rem(13px);
+}
+
+.input__block {
+  flex: 1;
+
+  .form__error {
+    color: $red;
+    font-size: rem(14px);
+  }
+}
+
+.input__title {
+  cursor: pointer;
+}
+
+.input {
+  border: none;
+  min-height: rem(58px);
+  border-radius: rem(5px);
+  width: 100%;
+
+  &--textarea {
+    min-height: rem(150px);    
+  }
+
+  &:focus {
+    border: rem(3px) solid $red;
+    outline: none;
+  }
+
+  @include tablets {
+    min-height: rem(36px);
+  }
+
+  @include tablets {
+    &--textarea {
+      min-height: rem(82px);
+    }
+  }
+}
+
+.form__controls {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: rem(20px);
+  margin-top: rem(35px);
+  
+  @include tablets {
+    row-gap: rem(20px);
+  }
+
+  @include phones {
+    justify-content: center;
+  }
+}
+
+.form__controls:nth-child(3) {
+  margin-top: rem(20px);
+}
+
+.radio {
+  display: flex;
+  column-gap: rem(10px);
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.radio__item {
+  display: none;
+
+  &:checked ~ .radio__elem{
+    &::before {
+      display: block;
+    }
+  }
+}
+
+.radio__elem {
+  width: rem(25px);
+  height: rem(25px);
+  border-radius: 50%;
+  background: $white;
+  position: relative;
+
+  &::before {
+    content: '';
+    width: rem(13px);
+    height: rem(13px);
+    border-radius: 50%;
+    background: $red;
+    position: absolute;
+    top: rem(6px);
+    left: rem(6px);
+    display: none;
+  }
+
+  &--checkbox {
+    border-radius: rem(3px);
+
+    &::before {
+      background: url('../img/check.png') center center no-repeat;
+      left: rem(7px);
+    }
+
+  }
+}
+
+.form__btns {
+  margin-top: rem(50px);
+  display: flex;
+  column-gap: rem(10px);
+
+  @include tablets {
+    justify-content: center;
+  }
+}
+
+.form-input--warning {
+  border: 2px solid red;
+}

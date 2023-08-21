@@ -1,0 +1,23 @@
+.socials {
+  width: rem(150px);
+}
+
+.socials__list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.socials_item {
+  display: flex;
+}
+
+.socials__svg {
+  fill: #999999;
+  width: rem(30px);
+  height: rem(30px);
+  transition: .2s;
+
+  &:hover {
+    fill: $black;
+  }
+}

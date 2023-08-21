@@ -1,0 +1,46 @@
+.slider-controls__arrow {
+  position: absolute;
+  display: flex;
+  height: 100vh;
+  width: rem(20px);
+  top: 0;
+  align-items: center;
+  
+
+  &--left {
+    left: rem(0px);
+  }
+
+  &--right {
+    right: rem(0px);
+  }
+
+  @include tablets {
+    position: relative;
+    height: 100%;
+
+    &--left {
+      left: 0;
+    }
+  
+    &--right {
+      right: 0;
+    }
+  }
+}
+
+.arrow {
+  display: flex;
+  stroke: black;
+  height: rem(41px);
+  fill: none;
+  cursor: pointer;
+
+  &--right {
+    transform: rotate(180deg);
+  }
+
+  &:hover {
+    stroke: $red;
+  }
+}

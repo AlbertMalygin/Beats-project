@@ -1,0 +1,54 @@
+//main variables
+$containerWidth: 940px;
+$baseFontSize: 18px;
+
+//breakpoints
+$tablets: 768px;
+$phones: 480px;
+
+//colors
+$red: #E01F3D;
+$body: #666666;
+$black: #292929;
+$white: #FFFFFF;
+
+//z-indexes
+$zIndexHamburger: 25;
+$zIndexModalWindow: 20;
+$zIndexFixedMenu: 15;
+$zIndexDecor:10;
+
+//IMPORTS:
+//fonts
+@import "./components/fonts.scss";
+
+//layout
+@import "./media.scss";
+@import "./layout.scss";
+@import "./normalize.scss";
+
+
+//components
+@import "./components/header.scss";
+@import "./components/nav.scss";
+@import "./components/phone-number.scss";
+@import "./components/hamburger.scss";
+@import "./components/hero.scss";
+@import "./components/btn.scss";
+@import "./components/advantages.scss";
+@import "./components/features.scss";
+@import "./components/shop.scss";
+@import "./components/slider-controls.scss";
+@import "./components/dropdown-menu.scss";
+@import "./components/team.scss";
+@import "./components/colors.scss";
+@import "./components/reviews.scss";
+@import "./components/review.scss";
+@import "./components/reviews-switcher.scss";
+@import "./components/video.scss";
+@import "./components/form.scss";
+@import "./components/map.scss";
+@import "./components/footer.scss";
+@import "./components/socials.scss";
+@import "./components/fixed-menu.scss";
+@import "./components/modal.scss";
