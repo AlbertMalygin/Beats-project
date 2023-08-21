@@ -20,7 +20,6 @@ const togglePlaybackStatus = (event) => {
     videoIntroFrame.classList.remove('player__intro-frame--paused');
     videoStartBtn.classList.remove('player__start--paused');
     player.play();
-    playback();
   } else {
     videoIntroFrame.classList.add('player__intro-frame--paused');
     videoStartBtn.classList.add('player__start--paused');
@@ -102,6 +101,8 @@ soundLvlLine.addEventListener('click', (e) => {
 
   player.volume = volumeLevel;
 });
+
+playback();
 
 
 
