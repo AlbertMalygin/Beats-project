@@ -3,7 +3,7 @@ let yaMap;
 const init = () => {
   yaMap = new ymaps.Map("yamap", {
     center: [44.980863, 38.998502],
-    zoom: 12.4,
+    zoom: 12,
     controls: [
       'typeSelector',
       'zoomControl'
@@ -23,7 +23,7 @@ const init = () => {
     draggable: false,
     iconImageHref: './img/icons/marker.svg',
     iconImageSize: [58, 73],
-    iconImageOffset: [-55, -70]
+    iconImageOffset: [-29, -73]
   });
   
   for (let i = 0; i < coords.length; i++) {
@@ -37,8 +37,3 @@ const init = () => {
 
 ymaps.ready(init);
 
-
-// // При клике на карту все метки будут удалены.
-// myCollection.getMap().events.add('click', function() {
-//   myCollection.removeAll();
-// });

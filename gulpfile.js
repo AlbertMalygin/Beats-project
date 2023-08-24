@@ -10,7 +10,7 @@ const cleanCSS = require('gulp-clean-css');
 const uglify = require('gulp-uglify');
 
 task('clean', () => {
-  return src('dist/**/*', {read: false}).pipe(clean());
+  return src('./dist', {read: false}).pipe(clean());
 });
 
 task('copy:html', () => {
